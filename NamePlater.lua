@@ -3,11 +3,9 @@ MakuluFramework          = MakuluFramework or _G.MakuluFramework
 
 local Unit               = MakuluFramework.Unit
 local Cache              = MakuluFramework.Cache
-local UnitGUID           = MakuluFramework.GetGuid
+local GetGuid            = MakuluFramework.GetGuid or UnitGUID
 
 local PlateCache         = Cache:getConstCacheCell()
-
-local UnitGUID           = UnitGUID
 
 local cachedSeen = {}
 
@@ -20,7 +18,7 @@ local function loadAllNameplate()
         local newCached = {}
         for name = 1,200 do
             local nameplate = "NamePlate" .. name
-            local guid = UnitGUID(nameplate)
+            local guid = GetGuid(nameplate)
 
             if guid then
                 plates[guid] = nameplate
@@ -38,7 +36,7 @@ local function loadAllNameplate()
 
         for key, _ in pairs(cachedSeen) do
             if sub(key, 1, 9) == "NamePlate" then
-                local guid = UnitGUID(key)
+                local guid = GetGuid(key)
                 if guid then
                     plates[guid] = key
                     plates[key] = guid

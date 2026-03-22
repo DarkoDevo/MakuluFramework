@@ -1,6 +1,8 @@
 local _, MakuluFramework = ...
 MakuluFramework          = MakuluFramework or _G.MakuluFramework
 
+local CombatLogGetCurrentEventInfo = _G.CombatLogGetCurrentEventInfo
+
 local TTDTracker = {}
 TTDTracker.__index = TTDTracker
 
@@ -73,13 +75,25 @@ end
 local tracker = TTDTracker:New()
 
 local frame = CreateFrame("Frame")
-frame:RegisterEvent("COMBAT_LOG_EVENT_UNFILTERED")
+if type(CombatLogGetCurrentEventInfo) == "function" then
+    frame:RegisterEvent("COMBAT_LOG_EVENT_UNFILTERED")
+end
+
 frame:SetScript("OnEvent", function(self, event)
-    local timestamp, eventType, _, sourceGUID, sourceName, sourceFlags, sourceRaidFlags, destGUID, destName, destFlags, destRaidFlags, arg1, arg2, arg3, arg4 = CombatLogGetCurrentEventInfo()
+    if type(CombatLogGetCurrentEventInfo) ~= "function" then
+        return
+    end
+
+    local _, eventType, _, _, _, _, _, destGUID, _, _, _, arg1, _, _, arg4 = CombatLogGetCurrentEventInfo()
+    if not eventType or not destGUID then
+        return
+    end
 
     if eventType == "SWING_DAMAGE" or eventType == "RANGE_DAMAGE" or eventType == "SPELL_DAMAGE" or eventType == "SPELL_PERIODIC_DAMAGE" then
         local amount = eventType == "SWING_DAMAGE" and arg1 or arg4
-        tracker:AddDamage(destGUID, amount)
+        if type(amount) == "number" and amount > 0 then
+            tracker:AddDamage(destGUID, amount)
+        end
     end
 end)
 

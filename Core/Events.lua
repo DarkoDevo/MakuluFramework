@@ -2,19 +2,47 @@ local _, MakuluFramework = ...
 MakuluFramework = MakuluFramework or _G.MakuluFramwork
 
 local registeredEvents = {}
+local erroredCallbacks = {}
 
 local frame = MakuluFramework.Frame.get()
+local traceback = _G.debugstack or debug.traceback
+local print = _G.print
+local CombatLogGetCurrentEventInfo = _G.CombatLogGetCurrentEventInfo
+
+local function is_event_supported(event_name)
+    if event_name == "COMBAT_LOG_EVENT_UNFILTERED" then
+        return type(CombatLogGetCurrentEventInfo) == "function"
+    end
+
+    return true
+end
 
 local function on_event(self, event, ...)
     local registered = registeredEvents[event]
     if not registered then return end
 
-    for _, callback in ipairs(registered) do
-        callback(event, ...)
+    local disabled = erroredCallbacks[event]
+
+    for index, callback in ipairs(registered) do
+        if type(callback) == "function" and not (disabled and disabled[index]) then
+            local ok, err = xpcall(callback, traceback, event, ...)
+            if not ok then
+                disabled = disabled or {}
+                disabled[index] = true
+                erroredCallbacks[event] = disabled
+                if print then
+                    print(string.format("[MakuluFramework] Disabled failing %s callback: %s", event, tostring(err)))
+                end
+            end
+        end
     end
 end
 
 local function register_event(event_name, callback)
+    if not is_event_supported(event_name) then
+        return
+    end
+
     if registeredEvents[event_name] then
         table.insert(registeredEvents[event_name], callback)
         return
@@ -49,5 +77,6 @@ end
 
 MakuluFramework.Events = {
     register = register_event,
-    registerReset = register_reset
+    registerReset = register_reset,
+    isEventSupported = is_event_supported,
 }

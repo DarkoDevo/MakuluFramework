@@ -83,9 +83,13 @@ local EventsToLookFor = {
 }
 
 Events.register("COMBAT_LOG_EVENT_UNFILTERED", function(event, ...)
+    if type(CombatLogGetCurrentEventInfo) ~= "function" then
+        return
+    end
+
     local _, eventType, _, srcGUID, _, srcFlags, _, destGUID, destName, destFlags, _, spellID, _, _, auraType =
         CombatLogGetCurrentEventInfo()
-    if not destGUID then return end -- sanity check
+    if not destGUID or not spellID then return end -- sanity check
 
     if auraType == "DEBUFF" then
         if not EventsToLookFor[eventType] then return end
@@ -96,7 +100,7 @@ Events.register("COMBAT_LOG_EVENT_UNFILTERED", function(event, ...)
 
         on_dr_spell(destGUID, category, eventType ~= "SPELL_AURA_REMOVED")
     end
-end)
+ end)
 
 local function cleanup_loop()
     local total_cleaned = 0

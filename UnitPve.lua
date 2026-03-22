@@ -814,8 +814,12 @@ MakuluFramework.Events.register("PLAYER_REGEN_ENABLED", function()
 end)
 
 local function on_spell_cast_success()
-    local _, subevent, _, sourceGUID, _, _, _, _, _, _, _, spellID = CombatLogGetCurrentEventInfo()
-    if subevent ~= "SPELL_CAST_SUCCESS" then return end
+    if type(CombatLogGetCurrentEventInfo) ~= "function" then
+        return
+    end
+
+    local _, subevent, _, _, _, _, _, _, _, _, _, spellID = CombatLogGetCurrentEventInfo()
+    if subevent ~= "SPELL_CAST_SUCCESS" or not spellID then return end
 
     for key, id in pairs(incSpell.prototype) do
         if spellID == id then
@@ -824,7 +828,9 @@ local function on_spell_cast_success()
         end
     end
 end
-MakuluFramework.Events.register("COMBAT_LOG_EVENT_UNFILTERED", on_spell_cast_success)
+if MakuluFramework.Events.isEventSupported("COMBAT_LOG_EVENT_UNFILTERED") then
+    MakuluFramework.Events.register("COMBAT_LOG_EVENT_UNFILTERED", on_spell_cast_success)
+end
 
 
 local incCast = function(self, key, spellTable)

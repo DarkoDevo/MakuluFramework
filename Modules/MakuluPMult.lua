@@ -7,9 +7,12 @@ local player     = ConstUnits.player
 local hooks      = {}
 
 local function onCombatLogEvent(event, ...)
+  if type(CombatLogGetCurrentEventInfo) ~= "function" then
+    return
+  end
+
   local timestamp, subevent, hideCaster, sourceGUID, sourceName, sourceFlags, sourceRaidFlags, destGUID, destName, destFlags, destRaidFlags, spellID, spellName, spellSchool = CombatLogGetCurrentEventInfo()
-  if sourceGUID ~= player.guid then return end
-  if not spellID then return end
+  if sourceGUID ~= player.guid or not spellID or not destGUID then return end
 
   local hook = hooks[spellID]
   if not hook then return end
@@ -35,7 +38,9 @@ local eventsSetup = false
 
 local function registerPMulti(debuff, pmulFunc)
   if not eventsSetup then
-    Events.register("COMBAT_LOG_EVENT_UNFILTERED", onCombatLogEvent)
+    if Events.isEventSupported("COMBAT_LOG_EVENT_UNFILTERED") then
+      Events.register("COMBAT_LOG_EVENT_UNFILTERED", onCombatLogEvent)
+    end
     Events.registerReset(function()
       for _, i in pairs(hooks) do
         i.stored = {}

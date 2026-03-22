@@ -410,10 +410,13 @@ local function player_casted(spellId)
 end
 
 local function on_spell_cast_success(event, ...)
-    local timestamp, subevent, hideCaster, sourceGUID, sourceName, sourceFlags, sourceRaidFlags, destGUID, destName, destFlags, destRaidFlags, spellID, spellName, spellSchool =
-        CombatLogGetCurrentEventInfo()
+    if type(CombatLogGetCurrentEventInfo) ~= "function" then
+        return
+    end
 
-    if subevent == "SPELL_CAST_SUCCESS" then
+    local _, subevent, _, sourceGUID, sourceName, _, _, _, _, _, _, spellID = CombatLogGetCurrentEventInfo()
+
+    if subevent == "SPELL_CAST_SUCCESS" and spellID then
         if sourceGUID == rawget(CU.player, "guid") or sourceName == "player" then
             player_casted(spellID)
         end
@@ -425,7 +428,9 @@ local fake_casting_enabled = false
 local function enable_fake_cast()
     if fake_casting_enabled then return end
 
-    Events.register("COMBAT_LOG_EVENT_UNFILTERED", on_spell_cast_success)
+    if Events.isEventSupported("COMBAT_LOG_EVENT_UNFILTERED") then
+        Events.register("COMBAT_LOG_EVENT_UNFILTERED", on_spell_cast_success)
+    end
     fake_casting_enabled = true
 end
 

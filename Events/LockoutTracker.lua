@@ -57,10 +57,14 @@ local lockoutDurations = {
 }
 
 local function track_kicks()
+    if type(CombatLogGetCurrentEventInfo) ~= "function" then
+        return
+    end
+
     timestamp, subevent, _, sourceGUID, sourceName, sourceFlags, sourceRaidFlags, destGUID, destName, destFlags, destRaidFlags, spellID, spellName, _, extraSpellID, extraSpellName, extraSchool =
         CombatLogGetCurrentEventInfo()
 
-    if subevent ~= "SPELL_INTERRUPT" then return end
+    if subevent ~= "SPELL_INTERRUPT" or not destGUID or not destFlags or not spellID or not extraSchool then return end
 
     if band(destFlags, COMBATLOG_OBJECT_TYPE_PLAYER) > 0 and
         band(destFlags, COMBATLOG_OBJECT_CONTROL_PLAYER) > 0 then
@@ -89,7 +93,9 @@ local function track_kicks()
 end
 
 
-Events.register("COMBAT_LOG_EVENT_UNFILTERED", track_kicks)
+if Events.isEventSupported("COMBAT_LOG_EVENT_UNFILTERED") then
+    Events.register("COMBAT_LOG_EVENT_UNFILTERED", track_kicks)
+end
 
 local function unitLockedRemains(guid, school)
     local unit = unit_kicked[guid]

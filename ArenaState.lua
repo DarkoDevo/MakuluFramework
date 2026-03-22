@@ -4,6 +4,7 @@ MakuluFramework = MakuluFramework or _G.MakuluFramwork
 local AtoL             = MakuluFramework.AtoL
 local MultiUnits       = MakuluFramework.MultiUnits
 local Cache            = MakuluFramework.Cache
+local CombatLogGetCurrentEventInfo = _G.CombatLogGetCurrentEventInfo
 
 local arenaCache = Cache:getConstCacheCell()
 
@@ -54,10 +55,13 @@ MakuluFramework.Events.registerReset(function ()
 end)
 
 local function on_unit_spellcast_success(event, ...)
-    local timestamp, subevent, hideCaster, sourceGUID, sourceName, sourceFlags, sourceRaidFlags, destGUID, destName, destFlags, destRaidFlags, spellID, spellName, spellSchool =
-        CombatLogGetCurrentEventInfo()
+    if type(CombatLogGetCurrentEventInfo) ~= "function" then
+        return
+    end
 
-    if subevent ~= "SPELL_CAST_SUCCESS" then return end
+    local _, subevent, _, sourceGUID, _, _, _, _, _, _, _, spellID = CombatLogGetCurrentEventInfo()
+
+    if subevent ~= "SPELL_CAST_SUCCESS" or not sourceGUID or not spellID then return end
     local cd = onUseCds[spellID]
     if not cd then return end
 
@@ -69,7 +73,9 @@ local function on_unit_spellcast_success(event, ...)
 
     castedCdsTracker[sourceGUID] = math.max(found, GetTime() + cd)
 end
-MakuluFramework.Events.register("COMBAT_LOG_EVENT_UNFILTERED", on_unit_spellcast_success)
+if MakuluFramework.Events.isEventSupported("COMBAT_LOG_EVENT_UNFILTERED") then
+    MakuluFramework.Events.register("COMBAT_LOG_EVENT_UNFILTERED", on_unit_spellcast_success)
+end
 
 local function hasOnUseCdActive(guid)
     local found = castedCdsTracker[guid]
