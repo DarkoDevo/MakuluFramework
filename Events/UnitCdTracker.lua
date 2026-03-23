@@ -60,10 +60,17 @@ local syntheticCooldownOverrides = {
 
         return 0
     end,
+    [1264359] = 8000, -- Wild Thrash has an 8s cooldown that isn't exposed reliably by the live API here
 }
 
 local syntheticChargeDurationOverrides = {
     [217200] = 12, -- Barbed Shot
+    [34026] = 5, -- Kill Command
+}
+
+local syntheticChargeMaxOverrides = {
+    [217200] = 2, -- Barbed Shot
+    [34026] = 2, -- Kill Command
 }
 
 local playerCastEffectRules = {
@@ -395,14 +402,40 @@ local function advance_charge_snapshot(snapshot)
     return snapshot
 end
 
+local function ensure_synthetic_charge_snapshot(spellId)
+    local maxCharges = syntheticChargeMaxOverrides[spellId] or 0
+    if maxCharges <= 0 then
+        return advance_charge_snapshot(charge_snapshots[spellId])
+    end
+
+    local snapshot = advance_charge_snapshot(charge_snapshots[spellId])
+    if snapshot and (snapshot.maxCharges or 0) > 0 then
+        snapshot.maxCharges = math.max(snapshot.maxCharges or 0, maxCharges)
+        snapshot.cooldownDuration = get_charge_recharge_seconds(spellId, snapshot)
+        charge_snapshots[spellId] = snapshot
+        return snapshot
+    end
+
+    snapshot = {
+        maxCharges = maxCharges,
+        currentCharges = maxCharges,
+        cooldownStartTime = 0,
+        cooldownDuration = get_charge_recharge_seconds(spellId) or 0,
+        chargeModRate = 1,
+    }
+
+    charge_snapshots[spellId] = snapshot
+    return snapshot
+end
+
 local function remember_charge_snapshot(spellId, info)
     if type(info) ~= "table" then
-        return advance_charge_snapshot(charge_snapshots[spellId])
+        return ensure_synthetic_charge_snapshot(spellId)
     end
 
     local maxCharges = tonumber(info.maxCharges) or 0
     if maxCharges <= 0 then
-        return advance_charge_snapshot(charge_snapshots[spellId])
+        return ensure_synthetic_charge_snapshot(spellId)
     end
 
     local snapshot = advance_charge_snapshot(charge_snapshots[spellId]) or {}
@@ -458,7 +491,7 @@ local function modify_charge_snapshot(spellId, delta)
         return
     end
 
-    local snapshot = advance_charge_snapshot(charge_snapshots[spellId])
+    local snapshot = ensure_synthetic_charge_snapshot(spellId)
     if not snapshot then
         snapshot = remember_charge_snapshot(spellId, get_live_charge_info(spellId))
     end
@@ -552,7 +585,7 @@ local function apply_player_cast_effect_rules(spellId, playerGUID)
 end
 
 local function on_charge_spell_cast(spellId)
-    local snapshot = advance_charge_snapshot(charge_snapshots[spellId])
+    local snapshot = ensure_synthetic_charge_snapshot(spellId)
     if not snapshot or (snapshot.maxCharges or 0) <= 0 then
         return
     end
@@ -576,7 +609,7 @@ local function on_charge_spell_cast(spellId)
 end
 
 local function get_charge_snapshot(spellId)
-    local snapshot = advance_charge_snapshot(charge_snapshots[spellId])
+    local snapshot = ensure_synthetic_charge_snapshot(spellId)
     if not snapshot then
         return nil
     end
@@ -664,7 +697,10 @@ local function player_casted(spellId)
     return rawset(lookup, "lastUsed", (GetTime() * 1000))
 end
 
-local function player_casted_unit_spellcast(unitID, _, spellID)
+local player_casted_unit_spellcast
+local on_spell_cast_success
+
+player_casted_unit_spellcast = function(unitID, _, spellID)
     if unitID ~= "player" or not spellID then
         return
     end
@@ -684,7 +720,7 @@ local function player_casted_unit_spellcast(unitID, _, spellID)
     on_spell_cast(playerGUID, spellID, spellName)
 end
 
-local function on_spell_cast_success()
+on_spell_cast_success = function()
     if type(CombatLogGetCurrentEventInfo) ~= "function" then
         return
     end

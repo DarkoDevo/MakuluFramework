@@ -2,8 +2,6 @@ local _, MakuluFramework  = ...
 MakuluFramework           = MakuluFramework or _G.MakuluFramework
 
 local MF                  = MakuluFramework
-local Compat              = MakuluFramework.Compat or {}
-MakuluFramework.Compat    = Compat
 local cacheContext        = MakuluFramework.Cache
 local bc                  = MakuluFramework.callBlizz
 local GetTimeToDie        = MakuluFramework.GetTimeToDie
@@ -38,7 +36,6 @@ local UnitIsUnit          = UnitIsUnit
 local UnitCastingInfo     = UnitCastingInfo
 local UnitChannelInfo     = UnitChannelInfo
 local UnitPower           = UnitPower
-local UnitPowerMax        = UnitPowerMax
 local UnitAffectingCombat = UnitAffectingCombat
 local UnitIsDeadOrGhost   = UnitIsDeadOrGhost
 local UnitClassification  = UnitClassification
@@ -71,37 +68,6 @@ local channelKickTime     = 500
 
 local unitActions         = {}
 local me_self             = nil
-
-local function normalizeValue(value, fallback)
-    if type(Compat.NormalizeValue) == "function" then
-        local normalized = Compat.NormalizeValue(value)
-        if normalized ~= nil then
-            return normalized
-        end
-    end
-
-    if type(Compat.IsSecret) == "function" and Compat.IsSecret(value) then
-        return fallback
-    end
-
-    if value ~= nil then
-        return value
-    end
-
-    return fallback
-end
-
-local function normalizeNumber(value, fallback)
-    if type(Compat.UntaintNumber) == "function" then
-        return Compat:UntaintNumber(value, fallback)
-    end
-
-    if type(value) == "number" then
-        return value
-    end
-
-    return fallback or 0
-end
 
 local function generateNewRandomKicks()
     kickPercent = math.random(35, 65)
@@ -280,30 +246,25 @@ end
 
 function Unit:HealthMax()
     return self.cache:GetOrSet("HealthMax", function()
-        return math.max(1, normalizeNumber(UnitHealthMax(Unit.CallerId(self)), 1))
+        return UnitHealthMax(Unit.CallerId(self)) or 1
     end)
 end
 
 function Unit:HealthActual()
     return self.cache:GetOrSet("HealthActual", function()
-        return normalizeNumber(UnitHealth(Unit.CallerId(self)), 0)
+        return UnitHealth(Unit.CallerId(self)) or 0
     end)
 end
 
 function Unit:Health()
     return self.cache:GetOrSet("Health", function()
-        local maxHealth = Unit.HealthMax(self)
-        if maxHealth <= 0 then
-            return 0
-        end
-
-        return (Unit.HealthActual(self) / maxHealth) * 100
+        return (Unit.HealthActual(self) / Unit.HealthMax(self)) * 100
     end)
 end
 
 function Unit:TotalHealAbsorbs()
     return self.cache:GetOrSet("TotalHealAbsorbs", function()
-        return normalizeNumber(UnitGetTotalHealAbsorbs(Unit.CallerId(self)), 0)
+        return UnitGetTotalHealAbsorbs(Unit.CallerId(self)) or 0
     end)
 end
 
@@ -316,7 +277,7 @@ end
 
 function Unit:TotalAbsorbs()
     return self.cache:GetOrSet("TotalAbsorbs", function()
-        return normalizeNumber(UnitGetTotalAbsorbs(Unit.CallerId(self)), 0)
+        return UnitGetTotalAbsorbs(Unit.CallerId(self)) or 0
     end)
 end
 
@@ -335,7 +296,7 @@ end
 
 function Unit:Shield()
     return self.cache:GetOrSet("Shield", function()
-        return normalizeNumber(UnitGetTotalAbsorbs(Unit.CallerId(self)), 0)
+        return UnitGetTotalAbsorbs(Unit.CallerId(self))
     end)
 end
 
@@ -496,13 +457,13 @@ end
 
 function Unit:GetPower(powerId)
     return self.cache:GetOrSet("Power" .. powerId, function()
-        return normalizeNumber(UnitPower(Unit.CallerId(self), powerId), 0)
+        return UnitPower(Unit.CallerId(self), powerId)
     end)
 end
 
 function Unit:GetPowerMax(powerId)
     return self.cache:GetOrSet("PowerMax" .. powerId, function()
-        return math.max(0, normalizeNumber(UnitPowerMax(Unit.CallerId(self), powerId), 0))
+        return UnitPowerMax(Unit.CallerId(self), powerId)
     end)
 end
 
@@ -557,19 +518,14 @@ local function makePowersFunc(name, powerId)
 
     local pctUnitAttr = unitAttr .. "Pct"
     Unit[pctUnitAttr] = function(self)
-        local maxPower = Unit.GetPowerMax(self, powerId)
-        if maxPower <= 0 then
-            return 0
-        end
-
-        return (Unit.GetPower(self, powerId) / maxPower) * 100
+        return (Unit.GetPower(self, powerId) / Unit.GetPowerMax(self, powerId)) * 100
     end
     unitActions[name .. "Pct"] = Unit[pctUnitAttr]
     unitActions[name .. "pct"] = Unit[pctUnitAttr]
 
     local deficitUnitAttr = unitAttr .. "Deficit"
     Unit[deficitUnitAttr] = function(self)
-        return math.max(0, Unit.GetPowerMax(self, powerId) - Unit.GetPower(self, powerId))
+        return Unit.GetPowerMax(self, powerId) - Unit.GetPower(self, powerId)
     end
     unitActions[name .. "Deficit"] = Unit[deficitUnitAttr]
 end
@@ -598,32 +554,17 @@ local function make_aura_fetcher(filter)
             auraInfo = GetAuraDataByIndex(target, i, filter)
             if not auraInfo then
                 return buffPool
-            else
-                local sourceUnit = normalizeValue(auraInfo.sourceUnit, false)
-                local isMine = sourceUnit == "player"
+            elseif not _onlyOurs or (auraInfo.sourceUnit and auraInfo.sourceUnit == "player") then
+                auraInfo.count = auraInfo.applications
+                auraInfo.duration = auraInfo.duration * 1000
+                auraInfo.expiration = auraInfo.expirationTime * 1000
+                auraInfo.mine = auraInfo.sourceUnit and auraInfo.sourceUnit == "player"
+                auraInfo.points = auraInfo.points
+                auraInfo.idx = i
+                auraInfo.filter = filter
 
-                if not _onlyOurs or isMine then
-                    local spellId = normalizeNumber(auraInfo.spellId, 0)
-                    local auraName = normalizeValue(auraInfo.name, spellId)
-
-                    auraInfo.sourceUnit = sourceUnit
-                    auraInfo.spellId = spellId
-                    auraInfo.name = auraName
-                    auraInfo.count = normalizeNumber(auraInfo.applications, 0)
-                    auraInfo.duration = normalizeNumber(auraInfo.duration, 0) * 1000
-                    auraInfo.expiration = normalizeNumber(auraInfo.expirationTime, 0) * 1000
-                    auraInfo.mine = isMine
-                    auraInfo.points = normalizeValue(auraInfo.points, {})
-                    auraInfo.idx = i
-                    auraInfo.filter = filter
-
-                    if auraName ~= nil then
-                        buffPool[auraName] = auraInfo
-                    end
-                    if spellId ~= 0 then
-                        buffPool[spellId] = auraInfo
-                    end
-                end
+                buffPool[auraInfo.name] = auraInfo
+                buffPool[auraInfo.spellId] = auraInfo
             end
         end
 

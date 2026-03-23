@@ -57,215 +57,11 @@ local scrubsecretvalues            = _G.scrubsecretvalues
 local GetSpellCooldownSecrecy      = _G.GetSpellCooldownSecrecy
 local C_Secrets                    = _G.C_Secrets
 
-local function compatIsRestrictionEnabled(value)
-    if value == nil or value == false or value == 0 then
-        return false
-    end
-
-    if type(value) == "string" then
-        return value ~= "" and value ~= "None" and value ~= "none" and value ~= "NonSecret"
-    end
-
-    return true
-end
-
-Compat.IsRestrictionEnabled = Compat.IsRestrictionEnabled or compatIsRestrictionEnabled
-Compat.IsSecret = Compat.IsSecret or function(value)
-    if type(issecretvalue) ~= "function" then
-        return false
-    end
-
-    local ok, secret = pcall(issecretvalue, value)
-    return ok and secret or false
-end
-
-Compat.NormalizeValue = Compat.NormalizeValue or function(value)
-    if not Compat.IsSecret(value) then
-        return value
-    end
-
-    if type(scrubsecretvalues) == "function" then
-        local ok, scrubbed = pcall(scrubsecretvalues, value)
-        if ok and not Compat.IsSecret(scrubbed) then
-            return scrubbed
-        end
-    end
-
-    return nil
-end
-
-Compat.UntaintNumber = Compat.UntaintNumber or function(_, value, fallback)
-    local normalized = Compat.NormalizeValue(value)
-    if type(normalized) == "number" then
-        return normalized
-    end
-
-    return fallback or 0
-end
-
-local function buildChargeInfo(first, second, third, fourth)
-    if type(first) == "table" then
-        return {
-            currentCharges = Compat:UntaintNumber(first.currentCharges, 0),
-            maxCharges = Compat:UntaintNumber(first.maxCharges, 0),
-            cooldownStartTime = Compat:UntaintNumber(first.cooldownStartTime, 0),
-            cooldownDuration = Compat:UntaintNumber(first.cooldownDuration, 0),
-            chargeModRate = Compat:UntaintNumber(first.chargeModRate, 1),
-        }
-    end
-
-    if first == nil and second == nil and third == nil and fourth == nil then
-        return nil
-    end
-
-    return {
-        currentCharges = Compat:UntaintNumber(first, 0),
-        maxCharges = Compat:UntaintNumber(second, 0),
-        cooldownStartTime = Compat:UntaintNumber(third, 0),
-        cooldownDuration = Compat:UntaintNumber(fourth, 0),
-        chargeModRate = 1,
-    }
-end
-
-local function isChargeInfoUsable(info)
-    if type(info) ~= "table" then
-        return false
-    end
-
-    if (info.maxCharges or 0) > 0 then
-        return true
-    end
-
-    if (info.currentCharges or 0) > 0 then
-        return true
-    end
-
-    return (info.cooldownDuration or 0) > 0 and (info.cooldownStartTime or 0) > 0
-end
-
-local function getTrackedChargeInfo(spellId)
-    local tracker = MakuluFramework.Charges
-    if not tracker or type(tracker.Get) ~= "function" then
-        return nil
-    end
-
-    local ok, info = pcall(tracker.Get, spellId)
-    if ok and type(info) == "table" then
-        return info
-    end
-
-    return nil
-end
-
-local function rememberTrackedChargeInfo(spellId, info)
-    local tracker = MakuluFramework.Charges
-    if not tracker or type(tracker.Remember) ~= "function" then
-        return info
-    end
-
-    local ok, snapshot = pcall(tracker.Remember, spellId, info)
-    if ok and type(snapshot) == "table" then
-        return snapshot
-    end
-
-    return info
-end
-
-local function getChargeInfo(spellId)
-    if Compat.SafeGetSpellCharges then
-        local ok, info = pcall(Compat.SafeGetSpellCharges, Compat, spellId)
-        if ok and type(info) == "table" then
-            info = buildChargeInfo(info)
-            if isChargeInfoUsable(info) then
-                return rememberTrackedChargeInfo(spellId, info)
-            end
-        end
-    end
-
-    local ok, first, second, third, fourth = pcall(GetSpellCharges, spellId)
-    if ok then
-        local info = buildChargeInfo(first, second, third, fourth)
-        if isChargeInfoUsable(info) then
-            return rememberTrackedChargeInfo(spellId, info)
-        end
-    end
-
-    local tracked = getTrackedChargeInfo(spellId)
-    if tracked then
-        return tracked
-    end
-
-    return {
-        currentCharges = 0,
-        maxCharges = 0,
-        cooldownStartTime = 0,
-        cooldownDuration = 0,
-        chargeModRate = 1,
-    }
-end
-
-Compat.GetSpellCooldownInfo = Compat.GetSpellCooldownInfo or function(spellId)
-    local ok, cooldownInfo = pcall(GetSpellCooldown, spellId)
-    if not ok or type(cooldownInfo) ~= "table" then
-        return {
-            kind = "unknown",
-            remainsMS = huge,
-        }
-    end
-
-    local restricted = false
-    if type(GetSpellCooldownSecrecy) == "function" then
-        local secrecyOk, secrecy = pcall(GetSpellCooldownSecrecy, spellId)
-        restricted = secrecyOk and Compat.IsRestrictionEnabled(secrecy) or false
-    elseif C_Secrets and type(C_Secrets.ShouldCooldownsBeSecret) == "function" then
-        local secrecyOk, secrecy = pcall(C_Secrets.ShouldCooldownsBeSecret)
-        restricted = secrecyOk and Compat.IsRestrictionEnabled(secrecy) or false
-    end
-
-    local duration = Compat:UntaintNumber(cooldownInfo.duration, 0)
-    local startTime = Compat:UntaintNumber(cooldownInfo.startTime, 0)
-    local modRate = Compat:UntaintNumber(cooldownInfo.modRate, 1)
-    local enabled = Compat.NormalizeValue(cooldownInfo.isEnabled)
-
-    if type(duration) ~= "number" or type(startTime) ~= "number" then
-        return {
-            kind = "unknown",
-            remainsMS = huge,
-            startTime = startTime,
-            duration = duration,
-            modRate = modRate,
-            restricted = restricted,
-        }
-    end
-
-    if duration <= 0 or enabled == false then
-        return {
-            kind = restricted and "restricted" or "exact",
-            remainsMS = 0,
-            startTime = startTime,
-            duration = duration,
-            modRate = modRate,
-            restricted = restricted,
-        }
-    end
-
-    local remains = math.max((duration - ((time() - startTime) * modRate)) * 1000, 0)
-
-    return {
-        kind = restricted and "restricted" or "exact",
-        remainsMS = remains,
-        startTime = startTime,
-        duration = duration,
-        modRate = modRate,
-        restricted = restricted,
-    }
-end
-
 local function getGcd()
     return gcdInfo:GetOrSet("gcd", function()
-        local info = Compat.GetSpellCooldownInfo(gcdSpell)
+        local info = GetSpellCooldown(gcdSpell)
 
-        return info.kind == "unknown" and 0 or info.remainsMS
+        return (info.duration == 0 and 0) or ((info.duration - (time() - info.startTime)) * 1000)
     end)
 end
 
@@ -283,99 +79,19 @@ end
 
 local Spell = {}
 
-local function shouldUseTrackedCooldown(spellId)
-    local chargeInfo = getChargeInfo(spellId)
-    return (chargeInfo.maxCharges or 0) <= 1
-end
+local function getCooldown(spellId)
+    local cooldownInfo = GetSpellCooldown(spellId)
 
-local function getTrackedPlayerCooldown(spellId)
-    if not shouldUseTrackedCooldown(spellId) then
-        return 0
-    end
-
-    local cdTracker = MakuluFramework.CD
-    if not cdTracker or type(cdTracker.Get) ~= "function" then
-        return 0
-    end
-
-    local playerGuid = rawget(player, "guid") or player.guid
-    if not playerGuid then
-        return 0
-    end
-
-    local ok, remains = pcall(cdTracker.Get, playerGuid, spellId)
-    if ok and type(remains) == "number" and remains > 0 then
-        return remains
+    if cooldownInfo and cooldownInfo.duration and cooldownInfo.duration ~= 0 then
+        return (cooldownInfo.duration - (time() - cooldownInfo.startTime)) * 1000
     end
 
     return 0
 end
 
-local function getRuntimeActionCooldownMS(spellId)
-    local lookup = spellLookup[spellId]
-    local actionSpell = lookup and rawget(lookup, "actionSpell")
-    if not actionSpell or type(actionSpell.GetCooldown) ~= "function" then
-        return nil
-    end
-
-    local ok, cooldown = pcall(actionSpell.GetCooldown, actionSpell)
-    if ok and type(cooldown) == "number" and cooldown >= 0 then
-        return cooldown * 1000
-    end
-
-    return nil
-end
-
-local function wasRecentlyUsed(spellId, thresholdMs)
-    local lookup = spellLookup[spellId]
-    local lastUsed = lookup and rawget(lookup, "lastUsed")
-    if type(lastUsed) ~= "number" then
-        return false
-    end
-
-    return ((GetTime() * 1000) - lastUsed) <= (thresholdMs or 1500)
-end
-
-local function getCooldown(spellId)
-    local cooldownInfo = Compat.GetSpellCooldownInfo(spellId)
-    local apiRemains = cooldownInfo.remainsMS or huge
-    local trackedRemains = getTrackedPlayerCooldown(spellId)
-    local runtimeRemains = getRuntimeActionCooldownMS(spellId)
-
-    if runtimeRemains ~= nil then
-        if runtimeRemains > 0 then
-            trackedRemains = runtimeRemains
-        elseif not wasRecentlyUsed(spellId, math.max(getMaxGcd(), 1500)) then
-            return 0
-        end
-    end
-
-    if trackedRemains > 0 then
-        if cooldownInfo.kind == "unknown" then
-            return trackedRemains
-        end
-
-        if cooldownInfo.restricted then
-            return math.max(apiRemains, trackedRemains)
-        end
-
-        if apiRemains <= 300 then
-            return trackedRemains
-        end
-    end
-
-    return apiRemains
-end
-
 function Spell:Cooldown()
     return self.cache:GetOrSet("Cooldown", function()
         return getCooldown(rawget(self, "spellId"))
-    end)
-end
-
-function Spell:CooldownInfo()
-    return self.cache:GetOrSet("CooldownInfo", function()
-        return Compat.GetSpellCooldownInfo(rawget(self, "spellId"))
     end)
 end
 
@@ -388,15 +104,6 @@ end
 
 function Spell:SpecificBlockers()
     return false
-end
-
-local function hasAvailableCharge(spell)
-    local info = getChargeInfo(rawget(spell, "spellId"))
-    if not info or (info.maxCharges or 0) <= 0 then
-        return true
-    end
-
-    return (info.currentCharges or 0) > 0
 end
 
 function Spell:ReadyToUse()
@@ -420,10 +127,6 @@ function Spell:ReadyToUse()
 
         -- If spell is on calldown then it's definintely not usable
         if Spell.Cooldown(self) > 300 then
-            return false
-        end
-
-        if not hasAvailableCharge(self) then
             return false
         end
 
@@ -588,43 +291,9 @@ function Spell:CastTime()
 end
 
 function Spell:InRange(target)
-    if rawget(self, "ignoreRange") then
-        return true
-    end
-
-    if not target then
-        return true
-    end
-
     local targetId = rawget(target, "id")
-    if not targetId then
-        return true
-    end
-
     return self.cache:GetOrSet("Range" .. targetId, function()
-        if not Spell.HasRange(self) then
-            return true
-        end
-
-        local wowName = rawget(self, "wowName")
-        if not wowName or wowName == "None" then
-            return true
-        end
-
-        local inRange = IsSpellInRange(wowName, targetId)
-        if inRange ~= nil then
-            return inRange ~= false
-        end
-
-        local maxRange = Spell.Range(self)
-        if maxRange and maxRange > 0 then
-            local distance = target.distance
-            if distance and distance > 0 then
-                return distance <= maxRange
-            end
-        end
-
-        return true
+        return IsSpellInRange(rawget(self, "wowName"), targetId) ~= false
     end)
 end
 
@@ -641,25 +310,25 @@ function Spell:Count()
 end
 
 function Spell:Charges()
-    local info = getChargeInfo(rawget(self, "spellId"))
+    local info = GetSpellCharges(rawget(self, "spellId"))
 
     return info.currentCharges
 end
 
 function Spell:MaxCharges()
-    local info = getChargeInfo(rawget(self, "spellId"))
+    local info = GetSpellCharges(rawget(self, "spellId"))
 
     return info.maxCharges
 end
 
 function Spell:Fraction()
     return self.cache:GetOrSet("Frac", function()
-        local info = getChargeInfo(rawget(self, "spellId"))
+        local info = GetSpellCharges(rawget(self, "spellId"))
         if info.currentCharges == info.maxCharges then
             return info.currentCharges
         end
 
-        if info.cooldownStartTime == 0 or info.cooldownDuration <= 0 then
+        if info.cooldownStartTime == 0 then
             return info.currentCharges
         end
 
@@ -671,12 +340,12 @@ function Spell:Fraction()
 end
 
 function Spell:TimeToFullCharges()
-    local info = getChargeInfo(rawget(self, "spellId"))
+    local info = GetSpellCharges(rawget(self, "spellId"))
     if info.currentCharges == info.maxCharges then
         return 0
     end
 
-    if info.cooldownStartTime == 0 or info.cooldownDuration <= 0 then
+    if info.cooldownStartTime == 0 then
         return 0
     end
 
@@ -792,29 +461,6 @@ local constSpellLut = {
 local baseCallbackStr = "baseCallback"
 local callbacksStr = "callbacks"
 
-local function isBlockingCast(casting)
-    if not casting then
-        return false
-    end
-
-    local remaining = casting.remaining
-    if type(remaining) == "number" and remaining <= 0 then
-        return false
-    end
-
-    local endTime = casting.endTime
-    if type(endTime) == "number" and endTime > 0 and endTime <= (GetTime() * 1000) then
-        return false
-    end
-
-    local castLength = casting.castLength
-    if type(castLength) == "number" and castLength <= 0 then
-        return false
-    end
-
-    return true
-end
-
 local function spellCall(self, ...)
     if constSpellLut[rawget(self, "id")] then
         return rawget(self, baseCallbackStr)(self, ...)
@@ -823,7 +469,7 @@ local function spellCall(self, ...)
     if spellState.casted then return false end
     local casting = player.castOrChannelInfo
 
-    if isBlockingCast(casting) and not rawget(self, "ignoreCasting") then
+    if casting and not rawget(self, "ignoreCasting") then
         if not dumbCasts[casting.spellId] then return end
         if casting.spellId == rawget(self, "id") then return end
     end

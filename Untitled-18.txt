@@ -1,0 +1,1070 @@
+[01:26:19] Log cleared.
+[01:26:22] EVENT -> UNIT_SPELLCAST_SENT unit=player target=PvP Training Dummy spellID=257284 castGUID=Cast-3-4210-0-24377-257284-0056C0CEFC
+[01:26:22] EVENT -> UNIT_SPELLCAST_SUCCEEDED unit=player target=nil spellID=257284 castGUID=Cast-3-4210-0-24377-257284-0056C0CEFC
+[01:26:22] EVENT -> UNIT_SPELLCAST_SENT unit=player target=PvP Training Dummy spellID=75 castGUID=Cast-3-4210-0-24377-75-0033C0CEFD
+[01:26:23] EVENT -> UNIT_SPELLCAST_SENT unit=player target=PvP Training Dummy spellID=217200 castGUID=Cast-3-4210-0-24377-56641-004B40CEFD
+[01:26:23] EVENT -> UNIT_SPELLCAST_SUCCEEDED unit=player target=nil spellID=217200 castGUID=Cast-3-4210-0-24377-56641-004B40CEFD
+[01:26:23] EVENT -> ENTER COMBAT
+[01:26:23] ========================================
+[01:26:23] BEGIN FULL SCAN
+[01:26:23] === ENVIRONMENT ===
+[01:26:23] version=12.0.1 build=66527 date=Mar 19 2026 interface=120001
+[01:26:23] player=Darkoshuntar realm=Tichondrius
+[01:26:23] zone=Silvermoon City subZone=Falconwing Square
+[01:26:23] inCombat=true
+[01:26:23] specIndex=1
+[01:26:23] GetSpecializationInfo -> OK :: 253 | "Beast Mastery" | "A master of the wild who can tame a wide variety of beasts to assist them in combat.\r\
+\r\
+Preferred Weapon: Bow, Crossbow, Gun" | 461112 | "DAMAGER" | 2 | 0 | nil | 0 | true
+[01:26:23] api:isSecretValue=true
+[01:26:23] api:isSecretTable=true
+[01:26:23] api:scrubsecretvalues=true
+[01:26:23] api:C_Secrets.ShouldUnitAuraIndexBeSecret=true
+[01:26:23] api:C_Secrets.ShouldUnitSpellCastingBeSecret=true
+[01:26:23] api:C_SpellBook.GetNumSpellBookSkillLines=true
+[01:26:23] === ROTATION MATRIX ===
+[01:26:23] MATRIX player health -> SECRET :: <secret>
+[01:26:23] MATRIX player max health -> OK :: 138622
+[01:26:23] MATRIX player power -> SECRET :: <secret>
+[01:26:23] MATRIX player power max -> OK :: 100
+[01:26:23] MATRIX player cast info -> NIL :: <no values>
+[01:26:23] MATRIX player helpful aura[1] -> SECRET :: { spellId=<secret>, isBossAura=<secret>, duration=<secret>, expirationTime=<secret>, isFromPlayerOrPlayerPet=<secret>, isHelpful=<secret>, points=<secret>, icon=<secret>, nameplateShowPersonal=<secret>, isStealable=<secret>, isRaid=<secret>, auraInstanceID=1096, ... }
+[01:26:23] MATRIX player harmful aura[1] -> NIL :: nil
+[01:26:23] MATRIX target health -> SECRET :: <secret>
+[01:26:23] MATRIX target max health -> SECRET :: <secret>
+[01:26:23] MATRIX target cast info -> NIL :: <no values>
+[01:26:23] MATRIX target helpful aura[1] -> NIL :: nil
+[01:26:23] MATRIX target harmful aura[1] -> SECRET :: { spellId=<secret>, isBossAura=<secret>, duration=<secret>, expirationTime=<secret>, isFromPlayerOrPlayerPet=<secret>, isHelpful=<secret>, points=<secret>, icon=<secret>, nameplateShowPersonal=<secret>, isStealable=<secret>, isRaid=<secret>, dispelName=<secret>, ... }
+[01:26:23] MATRIX nameplate1 health -> SECRET :: <secret>
+[01:26:23] MATRIX nameplate1 cast info -> NIL :: <no values>
+[01:26:23] MATRIX nameplate1 harmful aura[1] -> SECRET :: { spellId=<secret>, isBossAura=<secret>, duration=<secret>, expirationTime=<secret>, isFromPlayerOrPlayerPet=<secret>, isHelpful=<secret>, points=<secret>, icon=<secret>, nameplateShowPersonal=<secret>, isStealable=<secret>, isRaid=<secret>, dispelName=<secret>, ... }
+[01:26:23] MATRIX watched spell cooldown -> OK :: { isOnGCD=true, modRate=1, activeCategory=133, isEnabled=true, startTime=810283.06, timeUntilEndOfStartRecovery=0.677, duration=1.391 }
+[01:26:23] MATRIX watched spell charges -> NIL :: <no values>
+[01:26:23] MATRIX watched spell usable -> OK :: true | false
+[01:26:23] === MAKULU RUNTIME ===
+[01:26:23] makulu.framework -> OK :: true
+[01:26:23] makulu.action -> OK :: true
+[01:26:23] makulu.burstMode -> OK :: false
+[01:26:23] makulu.rampMode -> OK :: false
+[01:26:23] makulu.spellState -> OK :: { casted=false, gcdHold=false, icon={ 0=<userdata>, ShowTimer=false, ShowTimerTextnoOCC=false, LastUpdate=810283.756, DurationMaxEnabled=false, __yieldHandledOnce=false, PBarOffs=0, InvertTimer=false, attributes={...}, ConditionObject={...}, UpdateFunction=<function>, DurationMin=0, ... }, castingLockdown=false }
+[01:26:23] mak.player.exists -> OK :: true
+[01:26:23] mak.player.inCombat -> OK :: true
+[01:26:23] mak.player.combatTime -> OK :: 0.36700000008568
+[01:26:23] mak.player.moving -> OK :: false
+[01:26:23] mak.player.hp -> OK :: 0
+[01:26:23] mak.player.focus -> OK :: 0
+[01:26:23] mak.player.focusMax -> OK :: 100
+[01:26:23] mak.player.castInfo -> NIL :: nil
+[01:26:23] mak.player.channelInfo -> NIL :: nil
+[01:26:23] mak.player.castOrChannelInfo -> NIL :: nil
+[01:26:23] mak.target.exists -> OK :: true
+[01:26:23] mak.target.canAttack -> OK :: true
+[01:26:23] mak.target.distance -> OK :: 20
+[01:26:23] mak.target.hp -> OK :: 0
+[01:26:23] mak.target.combatTime -> OK :: 0
+[01:26:23] mak.target.castOrChannelInfo -> NIL :: nil
+[01:26:23] mak.spell.HuntersMark[257284].object -> OK :: { spellId=257284, id=257284, targeted=true, wowName="Hunter's Mark", ignoreMoving=false, ignoreCasting=false, channel=false, lastAttemptTime=810282071, ignoreRange=false, lastUsed=810282471, offGcd=false }
+[01:26:23] mak.spell.HuntersMark[257284]:IsKnown -> OK :: true
+[01:26:23] mak.spell.HuntersMark[257284]:Cooldown -> OK :: 0
+[01:26:23] mak.spell.HuntersMark[257284]:ReadyToUse -> OK :: false
+[01:26:23] mak.spell.HuntersMark[257284]:Usable(target) -> NIL :: <no values>
+[01:26:23] mak.spell.HuntersMark[257284]:InRange(target) -> OK :: true
+[01:26:23] mak.spell.HuntersMark[257284]:Charges -> OK :: 0
+[01:26:23] mak.spell.HuntersMark[257284]:Fraction -> OK :: 0
+[01:26:23] mak.spell.HuntersMark[257284]:TimeToFullCharges -> OK :: 0
+[01:26:23] mak.spell.BarbedShot[217200].object -> OK :: { spellId=217200, id=217200, targeted=true, wowName="Barbed Shot", ignoreMoving=false, ignoreCasting=false, channel=false, lastAttemptTime=810283025, ignoreRange=false, lastUsed=810283389, offGcd=false }
+[01:26:23] mak.spell.BarbedShot[217200]:IsKnown -> OK :: true
+[01:26:23] mak.spell.BarbedShot[217200]:Cooldown -> OK :: 0
+[01:26:23] mak.spell.BarbedShot[217200]:ReadyToUse -> OK :: false
+[01:26:23] mak.spell.BarbedShot[217200]:Usable(target) -> NIL :: <no values>
+[01:26:23] mak.spell.BarbedShot[217200]:InRange(target) -> OK :: true
+[01:26:23] mak.spell.BarbedShot[217200]:Charges -> OK :: 1
+[01:26:23] mak.spell.BarbedShot[217200]:Fraction -> OK :: 1.023058034378
+[01:26:23] mak.spell.BarbedShot[217200]:TimeToFullCharges -> OK :: 16311.999999991
+[01:26:23] mak.spell.KillCommand[34026].object -> OK :: { spellId=34026, id=34026, targeted=true, wowName="Kill Command", ignoreMoving=false, ignoreCasting=false, channel=false, lastAttemptTime=808710440, ignoreRange=false, lastUsed=808705702, offGcd=false }
+[01:26:23] mak.spell.KillCommand[34026]:IsKnown -> OK :: true
+[01:26:23] mak.spell.KillCommand[34026]:Cooldown -> OK :: 0
+[01:26:23] mak.spell.KillCommand[34026]:ReadyToUse -> OK :: false
+[01:26:23] mak.spell.KillCommand[34026]:Usable(target) -> NIL :: <no values>
+[01:26:23] mak.spell.KillCommand[34026]:InRange(target) -> OK :: true
+[01:26:23] mak.spell.KillCommand[34026]:Charges -> OK :: 2
+[01:26:23] mak.spell.KillCommand[34026]:Fraction -> OK :: 2
+[01:26:23] mak.spell.KillCommand[34026]:TimeToFullCharges -> OK :: 0
+[01:26:23] mak.spell.BestialWrath[19574].object -> OK :: { spellId=19574, id=19574, targeted=true, wowName="Bestial Wrath", ignoreMoving=false, ignoreCasting=false, channel=false, lastAttemptTime=810207087, ignoreRange=false, lastUsed=808700033, offGcd=false }
+[01:26:23] mak.spell.BestialWrath[19574]:IsKnown -> OK :: true
+[01:26:23] mak.spell.BestialWrath[19574]:Cooldown -> OK :: 0
+[01:26:23] mak.spell.BestialWrath[19574]:ReadyToUse -> OK :: false
+[01:26:23] mak.spell.BestialWrath[19574]:Usable(target) -> NIL :: <no values>
+[01:26:23] mak.spell.BestialWrath[19574]:InRange(target) -> OK :: true
+[01:26:23] mak.spell.BestialWrath[19574]:Charges -> OK :: 0
+[01:26:23] mak.spell.BestialWrath[19574]:Fraction -> OK :: 0
+[01:26:23] mak.spell.BestialWrath[19574]:TimeToFullCharges -> OK :: 0
+[01:26:23] mak.spell.CobraShot[193455].object -> OK :: { spellId=193455, id=193455, targeted=true, wowName="Cobra Shot", ignoreMoving=false, ignoreCasting=false, channel=false, lastAttemptTime=99999, ignoreRange=false, lastUsed=809829918, offGcd=false }
+[01:26:23] mak.spell.CobraShot[193455]:IsKnown -> OK :: true
+[01:26:23] mak.spell.CobraShot[193455]:Cooldown -> OK :: 0
+[01:26:23] mak.spell.CobraShot[193455]:ReadyToUse -> OK :: false
+[01:26:23] mak.spell.CobraShot[193455]:Usable(target) -> NIL :: <no values>
+[01:26:23] mak.spell.CobraShot[193455]:InRange(target) -> OK :: true
+[01:26:23] mak.spell.CobraShot[193455]:Charges -> OK :: 0
+[01:26:23] mak.spell.CobraShot[193455]:Fraction -> OK :: 0
+[01:26:23] mak.spell.CobraShot[193455]:TimeToFullCharges -> OK :: 0
+[01:26:23] mak.spell.CallPet1[883].object -> OK :: { spellId=883, id=883, targeted=true, wowName="Call Pet 1", ignoreMoving=false, ignoreCasting=false, channel=false, lastAttemptTime=810227457, ignoreRange=false, lastUsed=810227840, offGcd=false }
+[01:26:23] mak.spell.CallPet1[883]:IsKnown -> OK :: true
+[01:26:23] mak.spell.CallPet1[883]:Cooldown -> OK :: 0
+[01:26:23] mak.spell.CallPet1[883]:ReadyToUse -> OK :: false
+[01:26:23] mak.spell.CallPet1[883]:Usable(target) -> NIL :: <no values>
+[01:26:23] mak.spell.CallPet1[883]:InRange(target) -> OK :: true
+[01:26:23] mak.spell.CallPet1[883]:Charges -> OK :: 0
+[01:26:23] mak.spell.CallPet1[883]:Fraction -> OK :: 0
+[01:26:23] mak.spell.CallPet1[883]:TimeToFullCharges -> OK :: 0
+[01:26:23] mak.spell.CallPet2[83242].object -> OK :: { spellId=83242, id=83242, targeted=true, wowName="Call Pet 2", ignoreMoving=false, ignoreCasting=false, channel=false, lastAttemptTime=99999, ignoreRange=false, lastUsed=99999, offGcd=false }
+[01:26:23] mak.spell.CallPet2[83242]:IsKnown -> OK :: true
+[01:26:23] mak.spell.CallPet2[83242]:Cooldown -> OK :: 0
+[01:26:23] mak.spell.CallPet2[83242]:ReadyToUse -> OK :: false
+[01:26:23] mak.spell.CallPet2[83242]:Usable(target) -> NIL :: <no values>
+[01:26:23] mak.spell.CallPet2[83242]:InRange(target) -> OK :: true
+[01:26:23] mak.spell.CallPet2[83242]:Charges -> OK :: 0
+[01:26:23] mak.spell.CallPet2[83242]:Fraction -> OK :: 0
+[01:26:23] mak.spell.CallPet2[83242]:TimeToFullCharges -> OK :: 0
+[01:26:23] mak.spell.CallPet3[83243].object -> OK :: { spellId=83243, id=83243, targeted=true, wowName="Call Pet 3", ignoreMoving=false, ignoreCasting=false, channel=false, lastAttemptTime=806571168, ignoreRange=false, lastUsed=808341189, offGcd=false }
+[01:26:23] mak.spell.CallPet3[83243]:IsKnown -> OK :: true
+[01:26:23] mak.spell.CallPet3[83243]:Cooldown -> OK :: 0
+[01:26:23] mak.spell.CallPet3[83243]:ReadyToUse -> OK :: false
+[01:26:23] mak.spell.CallPet3[83243]:Usable(target) -> NIL :: <no values>
+[01:26:23] mak.spell.CallPet3[83243]:InRange(target) -> OK :: true
+[01:26:23] mak.spell.CallPet3[83243]:Charges -> OK :: 0
+[01:26:23] mak.spell.CallPet3[83243]:Fraction -> OK :: 0
+[01:26:23] mak.spell.CallPet3[83243]:TimeToFullCharges -> OK :: 0
+[01:26:23] === UNIT(FULL) player ===
+[01:26:23] player:UnitExists -> OK :: true
+[01:26:23] player:UnitGUID -> OK :: "Player-11-0E524449"
+[01:26:23] player:UnitName -> OK :: "Darkoshuntar" | nil
+[01:26:23] player:UnitFullName -> OK :: "Darkoshuntar" | "Tichondrius"
+[01:26:23] player:UnitClass -> OK :: "Hunter" | "HUNTER" | 3
+[01:26:23] player:UnitLevel -> OK :: 84
+[01:26:23] player:UnitClassification -> OK :: "normal"
+[01:26:23] player:UnitIsPlayer -> OK :: true
+[01:26:23] player:UnitCanAttack -> OK :: false
+[01:26:23] player:UnitCanAssist -> OK :: true
+[01:26:23] player:UnitIsVisible -> OK :: true
+[01:26:23] player:UnitInRange -> SECRET :: <secret> | <secret>
+[01:26:23] player:CheckInteractDistance(4) -> SKIPPED :: "skipped protected call in combat"
+[01:26:23] player:UnitHealth -> SECRET :: <secret>
+[01:26:23] player:UnitHealthMax -> OK :: 138622
+[01:26:23] player:UnitGetTotalAbsorbs -> SECRET :: <secret>
+[01:26:23] player:UnitGetIncomingHeals -> SECRET :: <secret>
+[01:26:23] player:UnitPower -> SECRET :: <secret>
+[01:26:23] player:UnitPowerMax -> OK :: 100
+[01:26:23] player:UnitPowerType -> OK :: 2 | "FOCUS" | nil | nil | nil
+[01:26:23] player:UnitAffectingCombat -> OK :: true
+[01:26:23] player:UnitThreatSituation -> NIL :: nil
+[01:26:23] player:ShouldUnitSpellCastingBeSecret -> OK :: false
+[01:26:23] player:UnitCastingInfo -> NIL :: <no values>
+[01:26:23] player:UnitChannelInfo -> NIL :: <no values>
+[01:26:23] === RESOURCES player ===
+[01:26:23] Focus -> current=<secret> max=100
+[01:26:23] === AURAS unit=player filter=HELPFUL limit=6 ===
+[01:26:23] HELPFUL aura[1] secretHint=true -> { name=<secret>, spellId=<secret>, applications=<secret>, duration=<secret>, expirationTime=<secret>, sourceUnit=<secret>, isStealable=<secret>, isBossAura=<secret>, isFromPlayerOrPlayerPet=<secret>, canApplyAura=<secret>, nameplateShowPersonal=<secret>, timeMod=<secret>, points=<secret> }
+[01:26:23] HELPFUL aura[2] secretHint=true -> { name=<secret>, spellId=<secret>, applications=<secret>, duration=<secret>, expirationTime=<secret>, sourceUnit=<secret>, isStealable=<secret>, isBossAura=<secret>, isFromPlayerOrPlayerPet=<secret>, canApplyAura=<secret>, nameplateShowPersonal=<secret>, timeMod=<secret>, points=<secret> }
+[01:26:23] HELPFUL aura[3] secretHint=true -> { name=<secret>, spellId=<secret>, applications=<secret>, duration=<secret>, expirationTime=<secret>, sourceUnit=<secret>, isStealable=<secret>, isBossAura=<secret>, isFromPlayerOrPlayerPet=<secret>, canApplyAura=<secret>, nameplateShowPersonal=<secret>, timeMod=<secret>, points=<secret> }
+[01:26:23] HELPFUL aura[4] secretHint=true -> { name=<secret>, spellId=<secret>, applications=<secret>, duration=<secret>, expirationTime=<secret>, sourceUnit=<secret>, isStealable=<secret>, isBossAura=<secret>, isFromPlayerOrPlayerPet=<secret>, canApplyAura=<secret>, nameplateShowPersonal=<secret>, timeMod=<secret>, points=<secret> }
+[01:26:23] HELPFUL aura[5] secretHint=true -> { name=<secret>, spellId=<secret>, applications=<secret>, duration=<secret>, expirationTime=<secret>, sourceUnit=<secret>, isStealable=<secret>, isBossAura=<secret>, isFromPlayerOrPlayerPet=<secret>, canApplyAura=<secret>, nameplateShowPersonal=<secret>, timeMod=<secret>, points=<secret> }
+[01:26:23] HELPFUL aura[6] secretHint=true -> { name=<secret>, spellId=<secret>, applications=<secret>, duration=<secret>, expirationTime=<secret>, sourceUnit=<secret>, isStealable=<secret>, isBossAura=<secret>, isFromPlayerOrPlayerPet=<secret>, canApplyAura=<secret>, nameplateShowPersonal=<secret>, timeMod=<secret>, points=<secret> }
+[01:26:23] === AURAS unit=player filter=HARMFUL limit=6 ===
+[01:26:23] HARMFUL aura list empty or inaccessible.
+[01:26:23] No HARMFUL auras detected in first 6 slots.
+[01:26:23] === UNIT(FULL) target ===
+[01:26:23] target:UnitExists -> OK :: true
+[01:26:23] target:UnitGUID -> OK :: "Creature-0-4210-0-24377-243211-00003ED2D2"
+[01:26:23] target:NPCID -> 243211
+[01:26:23] target:UnitName -> OK :: "PvP Training Dummy" | nil
+[01:26:23] target:UnitFullName -> OK :: "PvP Training Dummy" | nil
+[01:26:23] target:UnitClass -> OK :: "PvP Training Dummy" | "WARRIOR" | 1
+[01:26:23] target:UnitLevel -> OK :: 83
+[01:26:23] target:UnitClassification -> OK :: "normal"
+[01:26:23] target:UnitIsPlayer -> OK :: false
+[01:26:23] target:UnitCanAttack -> OK :: true
+[01:26:23] target:UnitCanAssist -> OK :: false
+[01:26:23] target:UnitIsVisible -> OK :: true
+[01:26:23] target:UnitInRange -> SECRET :: <secret> | <secret>
+[01:26:23] target:CheckInteractDistance(4) -> SKIPPED :: "skipped protected call in combat"
+[01:26:23] target:UnitHealth -> SECRET :: <secret>
+[01:26:23] target:UnitHealthMax -> SECRET :: <secret>
+[01:26:23] target:UnitGetTotalAbsorbs -> SECRET :: <secret>
+[01:26:23] target:UnitGetIncomingHeals -> NIL :: nil
+[01:26:23] target:UnitPower -> SECRET :: <secret>
+[01:26:23] target:UnitPowerMax -> SECRET :: <secret>
+[01:26:23] target:UnitPowerType -> OK :: 1 | "RAGE" | nil | nil | nil
+[01:26:23] target:UnitAffectingCombat -> OK :: false
+[01:26:23] target:UnitThreatSituation -> NIL :: nil
+[01:26:23] target:ShouldUnitSpellCastingBeSecret -> OK :: true
+[01:26:23] target:UnitCastingInfo -> NIL :: <no values>
+[01:26:23] target:UnitChannelInfo -> NIL :: <no values>
+[01:26:23] === RESOURCES target ===
+[01:26:23] Rage -> current=<secret> max=<secret>
+[01:26:23] ComboPoints -> current=0 max=5
+[01:26:23] === AURAS unit=target filter=HELPFUL limit=6 ===
+[01:26:23] HELPFUL aura list empty or inaccessible.
+[01:26:23] No HELPFUL auras detected in first 6 slots.
+[01:26:23] === AURAS unit=target filter=HARMFUL limit=6 ===
+[01:26:23] HARMFUL aura[1] secretHint=true -> { name=<secret>, spellId=<secret>, applications=<secret>, dispelName=<secret>, duration=<secret>, expirationTime=<secret>, sourceUnit=<secret>, isStealable=<secret>, isBossAura=<secret>, isFromPlayerOrPlayerPet=<secret>, canApplyAura=<secret>, nameplateShowPersonal=<secret>, timeMod=<secret>, points=<secret> }
+[01:26:23] HARMFUL aura[2] secretHint=true -> { name=<secret>, spellId=<secret>, applications=<secret>, dispelName=<secret>, duration=<secret>, expirationTime=<secret>, sourceUnit=<secret>, isStealable=<secret>, isBossAura=<secret>, isFromPlayerOrPlayerPet=<secret>, canApplyAura=<secret>, nameplateShowPersonal=<secret>, timeMod=<secret>, points=<secret> }
+[01:26:23] Skipping unit (not present): focus
+[01:26:23] Skipping unit (not present): mouseover
+[01:26:23] Skipping unit (not present): targettarget
+[01:26:23] === UNIT(FULL) pet ===
+[01:26:23] pet:UnitExists -> OK :: true
+[01:26:23] pet:UnitGUID -> OK :: "Pet-0-4210-0-24377-165189-080438A47E"
+[01:26:23] pet:NPCID -> 165189
+[01:26:23] pet:UnitName -> OK :: "Bird of Prey" | nil
+[01:26:23] pet:UnitFullName -> OK :: "Bird of Prey" | nil
+[01:26:23] pet:UnitClass -> OK :: "Bird of Prey" | "WARRIOR" | 1
+[01:26:23] pet:UnitLevel -> OK :: 84
+[01:26:23] pet:UnitClassification -> OK :: "normal"
+[01:26:23] pet:UnitIsPlayer -> OK :: false
+[01:26:23] pet:UnitCanAttack -> OK :: false
+[01:26:23] pet:UnitCanAssist -> OK :: true
+[01:26:23] pet:UnitIsVisible -> OK :: true
+[01:26:23] pet:UnitInRange -> SECRET :: <secret> | <secret>
+[01:26:23] pet:CheckInteractDistance(4) -> SKIPPED :: "skipped protected call in combat"
+[01:26:23] pet:UnitHealth -> SECRET :: <secret>
+[01:26:23] pet:UnitHealthMax -> OK :: 97035
+[01:26:23] pet:UnitGetTotalAbsorbs -> SECRET :: <secret>
+[01:26:23] pet:UnitGetIncomingHeals -> SECRET :: <secret>
+[01:26:23] pet:UnitPower -> SECRET :: <secret>
+[01:26:23] pet:UnitPowerMax -> OK :: 100
+[01:26:23] pet:UnitPowerType -> OK :: 2 | "FOCUS" | nil | nil | nil
+[01:26:23] pet:UnitAffectingCombat -> OK :: true
+[01:26:23] pet:UnitThreatSituation -> NIL :: nil
+[01:26:23] pet:ShouldUnitSpellCastingBeSecret -> OK :: false
+[01:26:23] pet:UnitCastingInfo -> NIL :: <no values>
+[01:26:23] pet:UnitChannelInfo -> NIL :: <no values>
+[01:26:23] === RESOURCES pet ===
+[01:26:23] Focus -> current=<secret> max=100
+[01:26:23] ComboPoints -> current=0 max=5
+[01:26:23] === AURAS unit=pet filter=HELPFUL limit=6 ===
+[01:26:23] HELPFUL aura[1] secretHint=true -> { name=<secret>, spellId=<secret>, applications=<secret>, duration=<secret>, expirationTime=<secret>, sourceUnit=<secret>, isStealable=<secret>, isBossAura=<secret>, isFromPlayerOrPlayerPet=<secret>, canApplyAura=<secret>, nameplateShowPersonal=<secret>, timeMod=<secret>, points=<secret> }
+[01:26:23] === AURAS unit=pet filter=HARMFUL limit=6 ===
+[01:26:23] HARMFUL aura list empty or inaccessible.
+[01:26:23] No HARMFUL auras detected in first 6 slots.
+[01:26:23] Skipping unit (not present): softenemy
+[01:26:23] Skipping unit (not present): softfriend
+[01:26:23] === NAMEPLATE SCAN ===
+[01:26:23] === UNIT(LITE) nameplate1 ===
+[01:26:23] nameplate1:UnitExists -> OK :: true
+[01:26:23] nameplate1:UnitGUID -> OK :: "Creature-0-4210-0-24377-243211-00003ED2D2"
+[01:26:23] nameplate1:UnitName -> OK :: "PvP Training Dummy" | nil
+[01:26:23] nameplate1:UnitCanAttack -> OK :: true
+[01:26:23] nameplate1:UnitHealth -> SECRET :: <secret>
+[01:26:23] nameplate1:UnitHealthMax -> SECRET :: <secret>
+[01:26:23] nameplate1:UnitPower -> SECRET :: <secret>
+[01:26:23] nameplate1:UnitPowerMax -> SECRET :: <secret>
+[01:26:23] nameplate1:UnitCastingInfo -> NIL :: <no values>
+[01:26:23] nameplate1:UnitChannelInfo -> NIL :: <no values>
+[01:26:23] === AURAS unit=nameplate1 filter=HARMFUL limit=3 ===
+[01:26:23] HARMFUL aura[1] secretHint=true -> { name=<secret>, spellId=<secret>, applications=<secret>, dispelName=<secret>, duration=<secret>, expirationTime=<secret>, sourceUnit=<secret>, isStealable=<secret>, isBossAura=<secret>, isFromPlayerOrPlayerPet=<secret>, canApplyAura=<secret>, nameplateShowPersonal=<secret>, timeMod=<secret>, points=<secret> }
+[01:26:23] HARMFUL aura[2] secretHint=true -> { name=<secret>, spellId=<secret>, applications=<secret>, dispelName=<secret>, duration=<secret>, expirationTime=<secret>, sourceUnit=<secret>, isStealable=<secret>, isBossAura=<secret>, isFromPlayerOrPlayerPet=<secret>, canApplyAura=<secret>, nameplateShowPersonal=<secret>, timeMod=<secret>, points=<secret> }
+[01:26:23] === UNIT(LITE) nameplate2 ===
+[01:26:23] nameplate2:UnitExists -> OK :: true
+[01:26:23] nameplate2:UnitGUID -> OK :: "Creature-0-4210-0-24377-243211-0000BED2D2"
+[01:26:23] nameplate2:UnitName -> OK :: "PvP Training Dummy" | nil
+[01:26:23] nameplate2:UnitCanAttack -> OK :: true
+[01:26:23] nameplate2:UnitHealth -> SECRET :: <secret>
+[01:26:23] nameplate2:UnitHealthMax -> SECRET :: <secret>
+[01:26:23] nameplate2:UnitPower -> SECRET :: <secret>
+[01:26:23] nameplate2:UnitPowerMax -> SECRET :: <secret>
+[01:26:23] nameplate2:UnitCastingInfo -> NIL :: <no values>
+[01:26:23] nameplate2:UnitChannelInfo -> NIL :: <no values>
+[01:26:23] === AURAS unit=nameplate2 filter=HARMFUL limit=3 ===
+[01:26:23] HARMFUL aura list empty or inaccessible.
+[01:26:23] No HARMFUL auras detected in first 3 slots.
+[01:26:23] === UNIT(LITE) nameplate3 ===
+[01:26:23] nameplate3:UnitExists -> OK :: true
+[01:26:23] nameplate3:UnitGUID -> OK :: "Creature-0-4210-0-24377-243211-00013ED2D2"
+[01:26:23] nameplate3:UnitName -> OK :: "PvP Training Dummy" | nil
+[01:26:23] nameplate3:UnitCanAttack -> OK :: true
+[01:26:23] nameplate3:UnitHealth -> SECRET :: <secret>
+[01:26:23] nameplate3:UnitHealthMax -> SECRET :: <secret>
+[01:26:23] nameplate3:UnitPower -> SECRET :: <secret>
+[01:26:23] nameplate3:UnitPowerMax -> SECRET :: <secret>
+[01:26:23] nameplate3:UnitCastingInfo -> NIL :: <no values>
+[01:26:23] nameplate3:UnitChannelInfo -> NIL :: <no values>
+[01:26:23] === AURAS unit=nameplate3 filter=HARMFUL limit=3 ===
+[01:26:23] HARMFUL aura list empty or inaccessible.
+[01:26:23] No HARMFUL auras detected in first 3 slots.
+[01:26:23] === UNIT(LITE) nameplate4 ===
+[01:26:23] nameplate4:UnitExists -> OK :: true
+[01:26:23] nameplate4:UnitGUID -> OK :: "Creature-0-4210-0-24377-243211-00003ED2D3"
+[01:26:23] nameplate4:UnitName -> OK :: "PvP Training Dummy" | nil
+[01:26:23] nameplate4:UnitCanAttack -> OK :: true
+[01:26:23] nameplate4:UnitHealth -> SECRET :: <secret>
+[01:26:23] nameplate4:UnitHealthMax -> SECRET :: <secret>
+[01:26:23] nameplate4:UnitPower -> SECRET :: <secret>
+[01:26:23] nameplate4:UnitPowerMax -> SECRET :: <secret>
+[01:26:23] nameplate4:UnitCastingInfo -> NIL :: <no values>
+[01:26:23] nameplate4:UnitChannelInfo -> NIL :: <no values>
+[01:26:23] === AURAS unit=nameplate4 filter=HARMFUL limit=3 ===
+[01:26:23] HARMFUL aura list empty or inaccessible.
+[01:26:23] No HARMFUL auras detected in first 3 slots.
+[01:26:23] === WATCHED SPELL SCAN ===
+[01:26:23] spell[61304]:C_Spell.GetSpellInfo -> OK :: { castTime=0, name="Global Cooldown", minRange=0, originalIconID=136243, iconID=136243, maxRange=0, spellID=61304 }
+[01:26:23] spell[61304]:C_Spell.GetSpellCooldown -> OK :: { isOnGCD=true, modRate=1, activeCategory=133, isEnabled=true, startTime=810283.06, timeUntilEndOfStartRecovery=0.677, duration=1.391 }
+[01:26:23] spell[61304]:C_Spell.GetSpellCharges -> NIL :: <no values>
+[01:26:23] spell[61304]:C_Spell.IsSpellUsable -> OK :: true | false
+[01:26:23] spell[61304]:C_Spell.IsSpellInRange(target) -> NIL :: nil
+[01:26:23] spell[61304]:IsPlayerSpell -> OK :: false
+[01:26:23] spell[61304]:IsSpellKnownOrOverridesKnown -> OK :: false
+[01:26:23] === ACTION BAR SCAN ===
+[01:26:23] slot 1 -> type="spell" id=19574 subType="spell"
+[01:26:23] action[1]:IsUsableAction -> OK :: true | false
+[01:26:23] action[1]:GetActionCooldown -> SECRET :: <secret> | <secret> | <secret> | <secret>
+[01:26:23] action[1]:GetActionCharges -> SECRET :: <secret> | <secret> | <secret> | <secret> | <secret>
+[01:26:23] action[1]:IsActionInRange -> NIL :: nil
+[01:26:23] action[1]:C_Spell.GetSpellInfo -> OK :: { castTime=0, name="Bestial Wrath", minRange=0, originalIconID=132127, iconID=132127, maxRange=100, spellID=19574 }
+[01:26:23] action[1]:C_Spell.GetSpellCooldown -> SECRET :: { isOnGCD=true, modRate=<secret>, activeCategory=<secret>, isEnabled=<secret>, startTime=<secret>, timeUntilEndOfStartRecovery=<secret>, duration=<secret> }
+[01:26:23] action[1]:C_Spell.GetSpellCharges -> NIL :: <no values>
+[01:26:23] slot 2 -> type="macro" id=193455 subType="spell"
+[01:26:23] action[2]:IsUsableAction -> OK :: true | false
+[01:26:23] action[2]:GetActionCooldown -> SECRET :: <secret> | <secret> | <secret> | <secret>
+[01:26:23] action[2]:GetActionCharges -> SECRET :: <secret> | <secret> | <secret> | <secret> | <secret>
+[01:26:23] action[2]:IsActionInRange -> OK :: true
+[01:26:23] slot 3 -> type="macro" id=781 subType="spell"
+[01:26:23] action[3]:IsUsableAction -> OK :: true | false
+[01:26:23] action[3]:GetActionCooldown -> SECRET :: <secret> | <secret> | <secret> | <secret>
+[01:26:23] action[3]:GetActionCharges -> SECRET :: <secret> | <secret> | <secret> | <secret> | <secret>
+[01:26:23] action[3]:IsActionInRange -> NIL :: nil
+[01:26:23] slot 4 -> type="macro" id=187650 subType="spell"
+[01:26:23] action[4]:IsUsableAction -> OK :: true | false
+[01:26:23] action[4]:GetActionCooldown -> SECRET :: <secret> | <secret> | <secret> | <secret>
+[01:26:23] action[4]:GetActionCharges -> SECRET :: <secret> | <secret> | <secret> | <secret> | <secret>
+[01:26:23] action[4]:IsActionInRange -> NIL :: nil
+[01:26:23] slot 5 -> type="macro" id=109248 subType="spell"
+[01:26:23] action[5]:IsUsableAction -> OK :: true | false
+[01:26:23] action[5]:GetActionCooldown -> SECRET :: <secret> | <secret> | <secret> | <secret>
+[01:26:23] action[5]:GetActionCharges -> SECRET :: <secret> | <secret> | <secret> | <secret> | <secret>
+[01:26:23] action[5]:IsActionInRange -> NIL :: nil
+[01:26:23] slot 6 -> type="macro" id=5116 subType="spell"
+[01:26:23] action[6]:IsUsableAction -> OK :: true | false
+[01:26:23] action[6]:GetActionCooldown -> SECRET :: <secret> | <secret> | <secret> | <secret>
+[01:26:23] action[6]:GetActionCharges -> SECRET :: <secret> | <secret> | <secret> | <secret> | <secret>
+[01:26:23] action[6]:IsActionInRange -> OK :: true
+[01:26:23] slot 7 -> type="spell" id=1264359 subType="spell"
+[01:26:23] action[7]:IsUsableAction -> OK :: true | false
+[01:26:23] action[7]:GetActionCooldown -> SECRET :: <secret> | <secret> | <secret> | <secret>
+[01:26:23] action[7]:GetActionCharges -> SECRET :: <secret> | <secret> | <secret> | <secret> | <secret>
+[01:26:23] action[7]:IsActionInRange -> OK :: true
+[01:26:23] action[7]:C_Spell.GetSpellInfo -> OK :: { castTime=0, name="Wild Thrash", minRange=0, originalIconID=461121, iconID=461121, maxRange=50, spellID=1264359 }
+[01:26:23] action[7]:C_Spell.GetSpellCooldown -> SECRET :: { isOnGCD=true, modRate=<secret>, activeCategory=<secret>, isEnabled=<secret>, startTime=<secret>, timeUntilEndOfStartRecovery=<secret>, duration=<secret> }
+[01:26:23] action[7]:C_Spell.GetSpellCharges -> NIL :: <no values>
+[01:26:23] slot 9 -> type="macro" id=356719 subType="spell"
+[01:26:23] action[9]:IsUsableAction -> OK :: true | false
+[01:26:23] action[9]:GetActionCooldown -> SECRET :: <secret> | <secret> | <secret> | <secret>
+[01:26:23] action[9]:GetActionCharges -> SECRET :: <secret> | <secret> | <secret> | <secret> | <secret>
+[01:26:23] action[9]:IsActionInRange -> OK :: true
+[01:26:23] slot 10 -> type="macro" id=2649 subType="pet"
+[01:26:23] action[10]:IsUsableAction -> OK :: true | false
+[01:26:23] action[10]:GetActionCooldown -> SECRET :: <secret> | <secret> | <secret> | <secret>
+[01:26:23] action[10]:GetActionCharges -> SECRET :: <secret> | <secret> | <secret> | <secret> | <secret>
+[01:26:23] action[10]:IsActionInRange -> OK :: true
+[01:26:23] slot 11 -> type="macro" id=217200 subType="spell"
+[01:26:23] action[11]:IsUsableAction -> OK :: true | false
+[01:26:23] action[11]:GetActionCooldown -> SECRET :: <secret> | <secret> | <secret> | <secret>
+[01:26:23] action[11]:GetActionCharges -> SECRET :: <secret> | <secret> | <secret> | <secret> | <secret>
+[01:26:23] action[11]:IsActionInRange -> OK :: true
+[01:26:23] slot 12 -> type="macro" id=34026 subType="spell"
+[01:26:23] action[12]:IsUsableAction -> OK :: true | false
+[01:26:23] action[12]:GetActionCooldown -> SECRET :: <secret> | <secret> | <secret> | <secret>
+[01:26:23] action[12]:GetActionCharges -> SECRET :: <secret> | <secret> | <secret> | <secret> | <secret>
+[01:26:23] action[12]:IsActionInRange -> OK :: true
+[01:26:23] slot 25 -> type="summonmount" id=1947 subType=nil
+[01:26:23] action[25]:IsUsableAction -> OK :: false | false
+[01:26:23] action[25]:GetActionCooldown -> SECRET :: <secret> | <secret> | <secret> | <secret>
+[01:26:23] action[25]:GetActionCharges -> SECRET :: <secret> | <secret> | <secret> | <secret> | <secret>
+[01:26:23] action[25]:IsActionInRange -> NIL :: nil
+[01:26:23] slot 26 -> type="summonmount" id=2634 subType=nil
+[01:26:23] action[26]:IsUsableAction -> OK :: false | false
+[01:26:23] action[26]:GetActionCooldown -> SECRET :: <secret> | <secret> | <secret> | <secret>
+[01:26:23] action[26]:GetActionCharges -> SECRET :: <secret> | <secret> | <secret> | <secret> | <secret>
+[01:26:23] action[26]:IsActionInRange -> NIL :: nil
+[01:26:23] slot 27 -> type="summonmount" id=2265 subType=nil
+[01:26:23] action[27]:IsUsableAction -> OK :: false | false
+[01:26:23] action[27]:GetActionCooldown -> SECRET :: <secret> | <secret> | <secret> | <secret>
+[01:26:23] action[27]:GetActionCharges -> SECRET :: <secret> | <secret> | <secret> | <secret> | <secret>
+[01:26:23] action[27]:IsActionInRange -> NIL :: nil
+[01:26:23] slot 28 -> type="summonmount" id=460 subType=nil
+[01:26:23] action[28]:IsUsableAction -> OK :: false | false
+[01:26:23] action[28]:GetActionCooldown -> SECRET :: <secret> | <secret> | <secret> | <secret>
+[01:26:23] action[28]:GetActionCharges -> SECRET :: <secret> | <secret> | <secret> | <secret> | <secret>
+[01:26:23] action[28]:IsActionInRange -> NIL :: nil
+[01:26:23] slot 29 -> type="item" id=88375 subType=nil
+[01:26:23] action[29]:IsUsableAction -> OK :: true | false
+[01:26:23] action[29]:GetActionCooldown -> SECRET :: <secret> | <secret> | <secret> | <secret>
+[01:26:23] action[29]:GetActionCharges -> SECRET :: <secret> | <secret> | <secret> | <secret> | <secret>
+[01:26:23] action[29]:IsActionInRange -> NIL :: nil
+[01:26:23] slot 31 -> type="macro" id=34477 subType="spell"
+[01:26:23] action[31]:IsUsableAction -> OK :: true | false
+[01:26:23] action[31]:GetActionCooldown -> SECRET :: <secret> | <secret> | <secret> | <secret>
+[01:26:23] action[31]:GetActionCharges -> SECRET :: <secret> | <secret> | <secret> | <secret> | <secret>
+[01:26:23] action[31]:IsActionInRange -> NIL :: nil
+[01:26:23] slot 32 -> type="summonmount" id=268435455 subType=nil
+[01:26:23] action[32]:IsUsableAction -> OK :: false | false
+[01:26:23] action[32]:GetActionCooldown -> SECRET :: <secret> | <secret> | <secret> | <secret>
+[01:26:23] action[32]:GetActionCharges -> SECRET :: <secret> | <secret> | <secret> | <secret> | <secret>
+[01:26:23] action[32]:IsActionInRange -> NIL :: nil
+[01:26:23] slot 33 -> type="item" id=219387 subType=nil
+[01:26:23] action[33]:IsUsableAction -> OK :: true | false
+[01:26:23] action[33]:GetActionCooldown -> SECRET :: <secret> | <secret> | <secret> | <secret>
+[01:26:23] action[33]:GetActionCharges -> SECRET :: <secret> | <secret> | <secret> | <secret> | <secret>
+[01:26:23] action[33]:IsActionInRange -> NIL :: nil
+[01:26:23] slot 35 -> type="macro" id=1543 subType="spell"
+[01:26:23] action[35]:IsUsableAction -> OK :: true | false
+[01:26:23] action[35]:GetActionCooldown -> SECRET :: <secret> | <secret> | <secret> | <secret>
+[01:26:23] action[35]:GetActionCharges -> SECRET :: <secret> | <secret> | <secret> | <secret> | <secret>
+[01:26:23] action[35]:IsActionInRange -> NIL :: nil
+[01:26:23] slot 36 -> type="macro" id=5384 subType="spell"
+[01:26:23] action[36]:IsUsableAction -> OK :: true | false
+[01:26:23] action[36]:GetActionCooldown -> SECRET :: <secret> | <secret> | <secret> | <secret>
+[01:26:23] action[36]:GetActionCharges -> SECRET :: <secret> | <secret> | <secret> | <secret> | <secret>
+[01:26:23] action[36]:IsActionInRange -> NIL :: nil
+[01:26:23] slot 40 -> type="macro" id=72 subType=""
+[01:26:23] action[40]:IsUsableAction -> OK :: true | false
+[01:26:23] action[40]:GetActionCooldown -> OK :: 0 | 0 | false | 1
+[01:26:23] action[40]:GetActionCharges -> OK :: 0 | 0 | 0 | 0 | 1
+[01:26:23] action[40]:IsActionInRange -> NIL :: nil
+[01:26:23] slot 43 -> type="spell" id=199483 subType="spell"
+[01:26:23] action[43]:IsUsableAction -> OK :: false | false
+[01:26:23] action[43]:GetActionCooldown -> SECRET :: <secret> | <secret> | <secret> | <secret>
+[01:26:23] action[43]:GetActionCharges -> SECRET :: <secret> | <secret> | <secret> | <secret> | <secret>
+[01:26:23] action[43]:IsActionInRange -> NIL :: nil
+[01:26:23] action[43]:C_Spell.GetSpellInfo -> OK :: { castTime=0, name="Camouflage", minRange=0, originalIconID=461113, iconID=461113, maxRange=50000, spellID=199483 }
+[01:26:23] action[43]:C_Spell.GetSpellCooldown -> SECRET :: { modRate=<secret>, isEnabled=<secret>, startTime=<secret>, duration=<secret> }
+[01:26:23] action[43]:C_Spell.GetSpellCharges -> NIL :: <no values>
+[01:26:23] slot 45 -> type="macro" id=56 subType=""
+[01:26:23] action[45]:IsUsableAction -> OK :: true | false
+[01:26:23] action[45]:GetActionCooldown -> OK :: 0 | 0 | false | 1
+[01:26:23] action[45]:GetActionCharges -> OK :: 0 | 0 | 0 | 0 | 1
+[01:26:23] action[45]:IsActionInRange -> NIL :: nil
+[01:26:23] slot 46 -> type="macro" id=57 subType=""
+[01:26:23] action[46]:IsUsableAction -> OK :: true | false
+[01:26:23] action[46]:GetActionCooldown -> OK :: 0 | 0 | false | 1
+[01:26:23] action[46]:GetActionCharges -> OK :: 0 | 0 | 0 | 0 | 1
+[01:26:23] action[46]:IsActionInRange -> NIL :: nil
+[01:26:23] slot 47 -> type="macro" id=127 subType=""
+[01:26:23] action[47]:IsUsableAction -> OK :: true | false
+[01:26:23] action[47]:GetActionCooldown -> OK :: 0 | 0 | false | 1
+[01:26:23] action[47]:GetActionCharges -> OK :: 0 | 0 | 0 | 0 | 1
+[01:26:23] action[47]:IsActionInRange -> NIL :: nil
+[01:26:23] slot 49 -> type="summonmount" id=2488 subType=nil
+[01:26:23] action[49]:IsUsableAction -> OK :: false | false
+[01:26:23] action[49]:GetActionCooldown -> SECRET :: <secret> | <secret> | <secret> | <secret>
+[01:26:23] action[49]:GetActionCharges -> SECRET :: <secret> | <secret> | <secret> | <secret> | <secret>
+[01:26:23] action[49]:IsActionInRange -> NIL :: nil
+[01:26:23] slot 50 -> type="summonmount" id=1414 subType=nil
+[01:26:23] action[50]:IsUsableAction -> OK :: false | false
+[01:26:23] action[50]:GetActionCooldown -> SECRET :: <secret> | <secret> | <secret> | <secret>
+[01:26:23] action[50]:GetActionCharges -> SECRET :: <secret> | <secret> | <secret> | <secret> | <secret>
+[01:26:23] action[50]:IsActionInRange -> NIL :: nil
+[01:26:23] slot 51 -> type="spell" id=20572 subType="spell"
+[01:26:23] action[51]:IsUsableAction -> OK :: true | false
+[01:26:23] action[51]:GetActionCooldown -> SECRET :: <secret> | <secret> | <secret> | <secret>
+[01:26:23] action[51]:GetActionCharges -> SECRET :: <secret> | <secret> | <secret> | <secret> | <secret>
+[01:26:23] action[51]:IsActionInRange -> NIL :: nil
+[01:26:23] action[51]:C_Spell.GetSpellInfo -> OK :: { castTime=0, name="Blood Fury", minRange=0, originalIconID=135726, iconID=135726, maxRange=0, spellID=20572 }
+[01:26:23] action[51]:C_Spell.GetSpellCooldown -> SECRET :: { modRate=<secret>, isEnabled=<secret>, startTime=<secret>, duration=<secret> }
+[01:26:23] action[51]:C_Spell.GetSpellCharges -> NIL :: <no values>
+[01:26:23] slot 52 -> type="summonmount" id=2823 subType=nil
+[01:26:23] action[52]:IsUsableAction -> OK :: false | false
+[01:26:23] action[52]:GetActionCooldown -> SECRET :: <secret> | <secret> | <secret> | <secret>
+[01:26:23] action[52]:GetActionCharges -> SECRET :: <secret> | <secret> | <secret> | <secret> | <secret>
+[01:26:23] action[52]:IsActionInRange -> NIL :: nil
+[01:26:23] slot 54 -> type="spell" id=466930 subType="spell"
+[01:26:23] action[54]:IsUsableAction -> OK :: false | false
+[01:26:23] action[54]:GetActionCooldown -> SECRET :: <secret> | <secret> | <secret> | <secret>
+[01:26:23] action[54]:GetActionCharges -> SECRET :: <secret> | <secret> | <secret> | <secret> | <secret>
+[01:26:23] action[54]:IsActionInRange -> OK :: true
+[01:26:23] action[54]:C_Spell.GetSpellInfo -> OK :: { castTime=0, name="Black Arrow", minRange=0, originalIconID=5927620, iconID=5927620, maxRange=40, spellID=466930 }
+[01:26:23] action[54]:C_Spell.GetSpellCooldown -> SECRET :: { isOnGCD=true, modRate=<secret>, activeCategory=<secret>, isEnabled=<secret>, startTime=<secret>, timeUntilEndOfStartRecovery=<secret>, duration=<secret> }
+[01:26:23] action[54]:C_Spell.GetSpellCharges -> SECRET :: { maxCharges=<secret>, cooldownStartTime=<secret>, chargeModRate=<secret>, currentCharges=<secret>, cooldownDuration=<secret> }
+[01:26:23] slot 55 -> type="summonmount" id=2491 subType=nil
+[01:26:23] action[55]:IsUsableAction -> OK :: false | false
+[01:26:23] action[55]:GetActionCooldown -> SECRET :: <secret> | <secret> | <secret> | <secret>
+[01:26:23] action[55]:GetActionCharges -> SECRET :: <secret> | <secret> | <secret> | <secret> | <secret>
+[01:26:23] action[55]:IsActionInRange -> NIL :: nil
+[01:26:23] slot 56 -> type="spell" id=125050 subType="spell"
+[01:26:23] action[56]:IsUsableAction -> OK :: true | false
+[01:26:23] action[56]:GetActionCooldown -> SECRET :: <secret> | <secret> | <secret> | <secret>
+[01:26:23] action[56]:GetActionCharges -> SECRET :: <secret> | <secret> | <secret> | <secret> | <secret>
+[01:26:23] action[56]:IsActionInRange -> NIL :: nil
+[01:26:23] action[56]:C_Spell.GetSpellInfo -> OK :: { castTime=93, name="Fetch", minRange=0, originalIconID=133718, iconID=133718, maxRange=50, spellID=125050 }
+[01:26:23] action[56]:C_Spell.GetSpellCooldown -> SECRET :: { isOnGCD=true, modRate=<secret>, activeCategory=<secret>, isEnabled=<secret>, startTime=<secret>, timeUntilEndOfStartRecovery=<secret>, duration=<secret> }
+[01:26:23] action[56]:C_Spell.GetSpellCharges -> NIL :: <no values>
+[01:26:23] slot 57 -> type="spell" id=19574 subType="assistedcombat"
+[01:26:23] action[57]:IsUsableAction -> OK :: true | false
+[01:26:23] action[57]:GetActionCooldown -> SECRET :: <secret> | <secret> | <secret> | <secret>
+[01:26:23] action[57]:GetActionCharges -> SECRET :: <secret> | <secret> | <secret> | <secret> | <secret>
+[01:26:23] action[57]:IsActionInRange -> NIL :: nil
+[01:26:23] action[57]:C_Spell.GetSpellInfo -> OK :: { castTime=0, name="Bestial Wrath", minRange=0, originalIconID=132127, iconID=132127, maxRange=100, spellID=19574 }
+[01:26:23] action[57]:C_Spell.GetSpellCooldown -> SECRET :: { isOnGCD=true, modRate=<secret>, activeCategory=<secret>, isEnabled=<secret>, startTime=<secret>, timeUntilEndOfStartRecovery=<secret>, duration=<secret> }
+[01:26:23] action[57]:C_Spell.GetSpellCharges -> NIL :: <no values>
+[01:26:23] slot 58 -> type="item" id=6948 subType=nil
+[01:26:23] action[58]:IsUsableAction -> OK :: true | false
+[01:26:23] action[58]:GetActionCooldown -> OK :: 810283.06 | 1.391 | true | 1
+[01:26:23] action[58]:GetActionCharges -> OK :: 1 | 1 | 4294067.296 | 900 | 1
+[01:26:23] action[58]:IsActionInRange -> NIL :: nil
+[01:26:23] slot 59 -> type="spell" id=94022 subType="pet"
+[01:26:23] action[59]:IsUsableAction -> OK :: false | false
+[01:26:23] action[59]:GetActionCooldown -> SECRET :: <secret> | <secret> | <secret> | <secret>
+[01:26:23] action[59]:GetActionCharges -> SECRET :: <secret> | <secret> | <secret> | <secret> | <secret>
+[01:26:23] action[59]:IsActionInRange -> NIL :: nil
+[01:26:23] action[59]:C_Spell.GetSpellInfo -> OK :: { castTime=0, name="Trick", minRange=0, originalIconID=236202, iconID=236202, maxRange=0, spellID=94022 }
+[01:26:23] action[59]:C_Spell.GetSpellCooldown -> SECRET :: { modRate=<secret>, isEnabled=<secret>, startTime=<secret>, duration=<secret> }
+[01:26:23] action[59]:C_Spell.GetSpellCharges -> NIL :: <no values>
+[01:26:23] slot 60 -> type="macro" id=135 subType=""
+[01:26:23] action[60]:IsUsableAction -> OK :: true | false
+[01:26:23] action[60]:GetActionCooldown -> OK :: 0 | 0 | false | 1
+[01:26:23] action[60]:GetActionCharges -> OK :: 0 | 0 | 0 | 0 | 1
+[01:26:23] action[60]:IsActionInRange -> NIL :: nil
+[01:26:23] slot 61 -> type="macro" id=186265 subType="spell"
+[01:26:23] action[61]:IsUsableAction -> OK :: true | false
+[01:26:23] action[61]:GetActionCooldown -> SECRET :: <secret> | <secret> | <secret> | <secret>
+[01:26:23] action[61]:GetActionCharges -> SECRET :: <secret> | <secret> | <secret> | <secret> | <secret>
+[01:26:23] action[61]:IsActionInRange -> NIL :: nil
+[01:26:23] slot 62 -> type="spell" id=264735 subType="spell"
+[01:26:23] action[62]:IsUsableAction -> OK :: true | false
+[01:26:23] action[62]:GetActionCooldown -> SECRET :: <secret> | <secret> | <secret> | <secret>
+[01:26:23] action[62]:GetActionCharges -> SECRET :: <secret> | <secret> | <secret> | <secret> | <secret>
+[01:26:23] action[62]:IsActionInRange -> OK :: true
+[01:26:23] action[62]:C_Spell.GetSpellInfo -> OK :: { castTime=0, name="Survival of the Fittest", minRange=0, originalIconID=136094, iconID=136094, maxRange=50000, spellID=264735 }
+[01:26:23] action[62]:C_Spell.GetSpellCooldown -> SECRET :: { modRate=<secret>, isEnabled=<secret>, startTime=<secret>, duration=<secret> }
+[01:26:23] action[62]:C_Spell.GetSpellCharges -> SECRET :: { maxCharges=<secret>, cooldownStartTime=<secret>, chargeModRate=<secret>, currentCharges=<secret>, cooldownDuration=<secret> }
+[01:26:23] slot 63 -> type="spell" id=109304 subType="spell"
+[01:26:23] action[63]:IsUsableAction -> OK :: true | false
+[01:26:23] action[63]:GetActionCooldown -> SECRET :: <secret> | <secret> | <secret> | <secret>
+[01:26:23] action[63]:GetActionCharges -> SECRET :: <secret> | <secret> | <secret> | <secret> | <secret>
+[01:26:23] action[63]:IsActionInRange -> NIL :: nil
+[01:26:23] action[63]:C_Spell.GetSpellInfo -> OK :: { castTime=0, name="Exhilaration", minRange=0, originalIconID=461117, iconID=461117, maxRange=45, spellID=109304 }
+[01:26:23] action[63]:C_Spell.GetSpellCooldown -> SECRET :: { isOnGCD=true, modRate=<secret>, activeCategory=<secret>, isEnabled=<secret>, startTime=<secret>, timeUntilEndOfStartRecovery=<secret>, duration=<secret> }
+[01:26:23] action[63]:C_Spell.GetSpellCharges -> NIL :: <no values>
+[01:26:23] slot 64 -> type="macro" id=187650 subType="spell"
+[01:26:23] action[64]:IsUsableAction -> OK :: true | false
+[01:26:23] action[64]:GetActionCooldown -> SECRET :: <secret> | <secret> | <secret> | <secret>
+[01:26:23] action[64]:GetActionCharges -> SECRET :: <secret> | <secret> | <secret> | <secret> | <secret>
+[01:26:23] action[64]:IsActionInRange -> NIL :: nil
+[01:26:23] slot 65 -> type="macro" id=23 subType=""
+[01:26:23] action[65]:IsUsableAction -> OK :: true | false
+[01:26:23] action[65]:GetActionCooldown -> OK :: 0 | 0 | false | 1
+[01:26:23] action[65]:GetActionCharges -> OK :: 0 | 0 | 0 | 0 | 1
+[01:26:23] action[65]:IsActionInRange -> NIL :: nil
+[01:26:23] slot 66 -> type="spell" id=186257 subType="spell"
+[01:26:23] action[66]:IsUsableAction -> OK :: true | false
+[01:26:23] action[66]:GetActionCooldown -> SECRET :: <secret> | <secret> | <secret> | <secret>
+[01:26:23] action[66]:GetActionCharges -> SECRET :: <secret> | <secret> | <secret> | <secret> | <secret>
+[01:26:23] action[66]:IsActionInRange -> NIL :: nil
+[01:26:23] action[66]:C_Spell.GetSpellInfo -> OK :: { castTime=0, name="Aspect of the Cheetah", minRange=0, originalIconID=132242, iconID=132242, maxRange=0, spellID=186257 }
+[01:26:23] action[66]:C_Spell.GetSpellCooldown -> SECRET :: { modRate=<secret>, isEnabled=<secret>, startTime=<secret>, duration=<secret> }
+[01:26:23] action[66]:C_Spell.GetSpellCharges -> NIL :: <no values>
+[01:26:23] slot 67 -> type="macro" id=19577 subType="spell"
+[01:26:23] action[67]:IsUsableAction -> OK :: true | false
+[01:26:23] action[67]:GetActionCooldown -> SECRET :: <secret> | <secret> | <secret> | <secret>
+[01:26:23] action[67]:GetActionCharges -> SECRET :: <secret> | <secret> | <secret> | <secret> | <secret>
+[01:26:23] action[67]:IsActionInRange -> OK :: true
+[01:26:23] slot 68 -> type="spell" id=272682 subType="spell"
+[01:26:23] action[68]:IsUsableAction -> OK :: true | false
+[01:26:23] action[68]:GetActionCooldown -> SECRET :: <secret> | <secret> | <secret> | <secret>
+[01:26:23] action[68]:GetActionCharges -> SECRET :: <secret> | <secret> | <secret> | <secret> | <secret>
+[01:26:23] action[68]:IsActionInRange -> NIL :: nil
+[01:26:23] action[68]:C_Spell.GetSpellInfo -> OK :: { castTime=0, name="Master's Call", minRange=0, originalIconID=236189, iconID=236189, maxRange=40, spellID=272682 }
+[01:26:23] action[68]:C_Spell.GetSpellCooldown -> SECRET :: { modRate=<secret>, isEnabled=<secret>, startTime=<secret>, duration=<secret> }
+[01:26:23] action[68]:C_Spell.GetSpellCharges -> NIL :: <no values>
+[01:26:23] slot 69 -> type="macro" id=147362 subType="spell"
+[01:26:23] action[69]:IsUsableAction -> OK :: true | false
+[01:26:23] action[69]:GetActionCooldown -> SECRET :: <secret> | <secret> | <secret> | <secret>
+[01:26:23] action[69]:GetActionCharges -> SECRET :: <secret> | <secret> | <secret> | <secret> | <secret>
+[01:26:23] action[69]:IsActionInRange -> OK :: true
+[01:26:23] slot 70 -> type="spell" id=209997 subType="spell"
+[01:26:23] action[70]:IsUsableAction -> OK :: true | false
+[01:26:23] action[70]:GetActionCooldown -> SECRET :: <secret> | <secret> | <secret> | <secret>
+[01:26:23] action[70]:GetActionCharges -> SECRET :: <secret> | <secret> | <secret> | <secret> | <secret>
+[01:26:23] action[70]:IsActionInRange -> OK :: true
+[01:26:23] action[70]:C_Spell.GetSpellInfo -> OK :: { castTime=0, name="Play Dead", minRange=0, originalIconID=134355, iconID=134355, maxRange=100, spellID=209997 }
+[01:26:23] action[70]:C_Spell.GetSpellCooldown -> SECRET :: { modRate=<secret>, isEnabled=<secret>, startTime=<secret>, duration=<secret> }
+[01:26:23] action[70]:C_Spell.GetSpellCharges -> NIL :: <no values>
+[01:26:23] slot 71 -> type="flyout" id=9 subType=nil
+[01:26:23] action[71]:IsUsableAction -> OK :: true | false
+[01:26:23] action[71]:GetActionCooldown -> OK :: 0 | 0 | false | 1
+[01:26:23] action[71]:GetActionCharges -> OK :: 0 | 0 | 0 | 0 | 1
+[01:26:23] action[71]:IsActionInRange -> NIL :: nil
+[01:26:23] slot 72 -> type="flyout" id=103 subType=nil
+[01:26:23] action[72]:IsUsableAction -> OK :: true | false
+[01:26:23] action[72]:GetActionCooldown -> OK :: 0 | 0 | false | 1
+[01:26:23] action[72]:GetActionCharges -> OK :: 0 | 0 | 0 | 0 | 1
+[01:26:23] action[72]:IsActionInRange -> NIL :: nil
+[01:26:23] slot 121 -> type="spell" id=403092 subType="spell"
+[01:26:23] action[121]:IsUsableAction -> OK :: false | false
+[01:26:23] action[121]:GetActionCooldown -> OK :: 810283.06 | 1.391 | true | 1
+[01:26:23] action[121]:GetActionCharges -> OK :: 0 | 0 | 0 | 0 | 1
+[01:26:23] action[121]:IsActionInRange -> NIL :: nil
+[01:26:23] action[121]:C_Spell.GetSpellInfo -> OK :: { castTime=0, name="Aerial Halt", minRange=0, originalIconID=5003205, iconID=5003205, maxRange=0, spellID=403092 }
+[01:26:23] action[121]:C_Spell.GetSpellCooldown -> OK :: { isOnGCD=true, modRate=1, activeCategory=133, isEnabled=true, startTime=810283.06, timeUntilEndOfStartRecovery=0.677, duration=1.391 }
+[01:26:23] action[121]:C_Spell.GetSpellCharges -> NIL :: <no values>
+[01:26:23] slot 122 -> type="spell" id=425782 subType="spell"
+[01:26:23] action[122]:IsUsableAction -> OK :: false | false
+[01:26:23] action[122]:GetActionCooldown -> OK :: 0 | 0 | true | 1
+[01:26:23] action[122]:GetActionCharges -> OK :: 3 | 3 | 4294787.296 | 180 | 1
+[01:26:23] action[122]:IsActionInRange -> NIL :: nil
+[01:26:23] action[122]:C_Spell.GetSpellInfo -> OK :: { castTime=0, name="Second Wind", minRange=0, originalIconID=4640489, iconID=4640489, maxRange=0, spellID=425782 }
+[01:26:23] action[122]:C_Spell.GetSpellCooldown -> OK :: { modRate=1, isEnabled=true, startTime=0, duration=0 }
+[01:26:23] action[122]:C_Spell.GetSpellCharges -> OK :: { maxCharges=3, cooldownStartTime=0, chargeModRate=1, currentCharges=3, cooldownDuration=180 }
+[01:26:23] slot 128 -> type="spell" id=0 subType="pet"
+[01:26:23] action[128]:IsUsableAction -> OK :: true | false
+[01:26:23] action[128]:GetActionCooldown -> OK :: 0 | 0 | false | 1
+[01:26:23] action[128]:GetActionCharges -> OK :: 0 | 0 | 0 | 0 | 1
+[01:26:23] action[128]:IsActionInRange -> NIL :: nil
+[01:26:23] action[128]:C_Spell.GetSpellInfo -> NIL :: <no values>
+[01:26:23] action[128]:C_Spell.GetSpellCooldown -> NIL :: <no values>
+[01:26:23] action[128]:C_Spell.GetSpellCharges -> NIL :: <no values>
+[01:26:23] slot 130 -> type="spell" id=372608 subType="spell"
+[01:26:23] action[130]:IsUsableAction -> OK :: false | false
+[01:26:23] action[130]:GetActionCooldown -> OK :: 810283.06 | 1.391 | true | 1
+[01:26:23] action[130]:GetActionCharges -> OK :: 6 | 6 | 4294952.296 | 15 | 1
+[01:26:23] action[130]:IsActionInRange -> NIL :: nil
+[01:26:23] action[130]:C_Spell.GetSpellInfo -> OK :: { castTime=0, name="Surge Forward", minRange=0, originalIconID=4640490, iconID=4640490, maxRange=0, spellID=372608 }
+[01:26:23] action[130]:C_Spell.GetSpellCooldown -> OK :: { isOnGCD=true, modRate=1, activeCategory=133, isEnabled=true, startTime=810283.06, timeUntilEndOfStartRecovery=0.677, duration=1.391 }
+[01:26:23] action[130]:C_Spell.GetSpellCharges -> OK :: { maxCharges=6, cooldownStartTime=0, chargeModRate=1, currentCharges=6, cooldownDuration=15 }
+[01:26:23] slot 131 -> type="spell" id=372610 subType="spell"
+[01:26:23] action[131]:IsUsableAction -> OK :: false | false
+[01:26:23] action[131]:GetActionCooldown -> OK :: 0 | 0 | true | 1
+[01:26:23] action[131]:GetActionCharges -> OK :: 6 | 6 | 4294952.296 | 15 | 1
+[01:26:23] action[131]:IsActionInRange -> NIL :: nil
+[01:26:23] action[131]:C_Spell.GetSpellInfo -> OK :: { castTime=0, name="Skyward Ascent", minRange=0, originalIconID=4640498, iconID=4640498, maxRange=0, spellID=372610 }
+[01:26:23] action[131]:C_Spell.GetSpellCooldown -> OK :: { modRate=1, isEnabled=true, startTime=0, duration=0 }
+[01:26:23] action[131]:C_Spell.GetSpellCharges -> OK :: { maxCharges=6, cooldownStartTime=0, chargeModRate=1, currentCharges=6, cooldownDuration=15 }
+[01:26:23] slot 132 -> type="spell" id=361584 subType="spell"
+[01:26:23] action[132]:IsUsableAction -> OK :: false | false
+[01:26:23] action[132]:GetActionCooldown -> OK :: 0 | 0 | true | 1
+[01:26:23] action[132]:GetActionCharges -> OK :: 0 | 0 | 0 | 0 | 1
+[01:26:23] action[132]:IsActionInRange -> NIL :: nil
+[01:26:23] action[132]:C_Spell.GetSpellInfo -> OK :: { castTime=0, name="Whirling Surge", minRange=0, originalIconID=4640477, iconID=4640477, maxRange=0, spellID=361584 }
+[01:26:23] action[132]:C_Spell.GetSpellCooldown -> OK :: { modRate=1, isEnabled=true, startTime=0, duration=0 }
+[01:26:23] action[132]:C_Spell.GetSpellCharges -> NIL :: <no values>
+[01:26:23] slot 150 -> type="spell" id=109304 subType="spell"
+[01:26:23] action[150]:IsUsableAction -> OK :: true | false
+[01:26:23] action[150]:GetActionCooldown -> SECRET :: <secret> | <secret> | <secret> | <secret>
+[01:26:23] action[150]:GetActionCharges -> SECRET :: <secret> | <secret> | <secret> | <secret> | <secret>
+[01:26:23] action[150]:IsActionInRange -> NIL :: nil
+[01:26:23] action[150]:C_Spell.GetSpellInfo -> OK :: { castTime=0, name="Exhilaration", minRange=0, originalIconID=461117, iconID=461117, maxRange=45, spellID=109304 }
+[01:26:23] action[150]:C_Spell.GetSpellCooldown -> SECRET :: { isOnGCD=true, modRate=<secret>, activeCategory=<secret>, isEnabled=<secret>, startTime=<secret>, timeUntilEndOfStartRecovery=<secret>, duration=<secret> }
+[01:26:23] action[150]:C_Spell.GetSpellCharges -> NIL :: <no values>
+[01:26:23] slot 157 -> type="spell" id=883 subType="spell"
+[01:26:23] action[157]:IsUsableAction -> OK :: true | false
+[01:26:23] action[157]:GetActionCooldown -> SECRET :: <secret> | <secret> | <secret> | <secret>
+[01:26:23] action[157]:GetActionCharges -> SECRET :: <secret> | <secret> | <secret> | <secret> | <secret>
+[01:26:23] action[157]:IsActionInRange -> NIL :: nil
+[01:26:23] action[157]:C_Spell.GetSpellInfo -> OK :: { castTime=0, name="Call Pet 1", minRange=0, originalIconID=132192, iconID=132192, maxRange=0, spellID=883 }
+[01:26:23] action[157]:C_Spell.GetSpellCooldown -> SECRET :: { isOnGCD=true, modRate=<secret>, activeCategory=<secret>, isEnabled=<secret>, startTime=<secret>, timeUntilEndOfStartRecovery=<secret>, duration=<secret> }
+[01:26:23] action[157]:C_Spell.GetSpellCharges -> NIL :: <no values>
+[01:26:23] slot 168 -> type="spell" id=1231411 subType="spell"
+[01:26:23] action[168]:IsUsableAction -> OK :: false | false
+[01:26:23] action[168]:GetActionCooldown -> SECRET :: <secret> | <secret> | <secret> | <secret>
+[01:26:23] action[168]:GetActionCharges -> SECRET :: <secret> | <secret> | <secret> | <secret> | <secret>
+[01:26:23] action[168]:IsActionInRange -> NIL :: nil
+[01:26:23] action[168]:C_Spell.GetSpellInfo -> OK :: { castTime=0, name="Recuperate", minRange=0, originalIconID=136074, iconID=136074, maxRange=0, spellID=1231411 }
+[01:26:23] action[168]:C_Spell.GetSpellCooldown -> SECRET :: { modRate=<secret>, isEnabled=<secret>, startTime=<secret>, duration=<secret> }
+[01:26:23] action[168]:C_Spell.GetSpellCharges -> NIL :: <no values>
+[01:26:23] slot 169 -> type="macro" id=136 subType="spell"
+[01:26:23] action[169]:IsUsableAction -> OK :: true | false
+[01:26:23] action[169]:GetActionCooldown -> SECRET :: <secret> | <secret> | <secret> | <secret>
+[01:26:23] action[169]:GetActionCharges -> SECRET :: <secret> | <secret> | <secret> | <secret> | <secret>
+[01:26:23] action[169]:IsActionInRange -> OK :: true
+[01:26:23] slot 170 -> type="spell" id=19574 subType="spell"
+[01:26:23] action[170]:IsUsableAction -> OK :: true | false
+[01:26:23] action[170]:GetActionCooldown -> SECRET :: <secret> | <secret> | <secret> | <secret>
+[01:26:23] action[170]:GetActionCharges -> SECRET :: <secret> | <secret> | <secret> | <secret> | <secret>
+[01:26:23] action[170]:IsActionInRange -> NIL :: nil
+[01:26:23] action[170]:C_Spell.GetSpellInfo -> OK :: { castTime=0, name="Bestial Wrath", minRange=0, originalIconID=132127, iconID=132127, maxRange=100, spellID=19574 }
+[01:26:23] action[170]:C_Spell.GetSpellCooldown -> SECRET :: { isOnGCD=true, modRate=<secret>, activeCategory=<secret>, isEnabled=<secret>, startTime=<secret>, timeUntilEndOfStartRecovery=<secret>, duration=<secret> }
+[01:26:23] action[170]:C_Spell.GetSpellCharges -> NIL :: <no values>
+[01:26:23] slot 172 -> type="spell" id=257284 subType="spell"
+[01:26:23] action[172]:IsUsableAction -> OK :: true | false
+[01:26:23] action[172]:GetActionCooldown -> SECRET :: <secret> | <secret> | <secret> | <secret>
+[01:26:23] action[172]:GetActionCharges -> SECRET :: <secret> | <secret> | <secret> | <secret> | <secret>
+[01:26:23] action[172]:IsActionInRange -> OK :: true
+[01:26:23] action[172]:C_Spell.GetSpellInfo -> OK :: { castTime=0, name="Hunter's Mark", minRange=0, originalIconID=236188, iconID=236188, maxRange=60, spellID=257284 }
+[01:26:23] action[172]:C_Spell.GetSpellCooldown -> SECRET :: { isOnGCD=true, modRate=<secret>, activeCategory=<secret>, isEnabled=<secret>, startTime=<secret>, timeUntilEndOfStartRecovery=<secret>, duration=<secret> }
+[01:26:23] action[172]:C_Spell.GetSpellCharges -> NIL :: <no values>
+[01:26:23] slot 173 -> type="spell" id=109304 subType="spell"
+[01:26:23] action[173]:IsUsableAction -> OK :: true | false
+[01:26:23] action[173]:GetActionCooldown -> SECRET :: <secret> | <secret> | <secret> | <secret>
+[01:26:23] action[173]:GetActionCharges -> SECRET :: <secret> | <secret> | <secret> | <secret> | <secret>
+[01:26:23] action[173]:IsActionInRange -> NIL :: nil
+[01:26:23] action[173]:C_Spell.GetSpellInfo -> OK :: { castTime=0, name="Exhilaration", minRange=0, originalIconID=461117, iconID=461117, maxRange=45, spellID=109304 }
+[01:26:23] action[173]:C_Spell.GetSpellCooldown -> SECRET :: { isOnGCD=true, modRate=<secret>, activeCategory=<secret>, isEnabled=<secret>, startTime=<secret>, timeUntilEndOfStartRecovery=<secret>, duration=<secret> }
+[01:26:23] action[173]:C_Spell.GetSpellCharges -> NIL :: <no values>
+[01:26:23] slot 174 -> type="spell" id=186265 subType="spell"
+[01:26:23] action[174]:IsUsableAction -> OK :: true | false
+[01:26:23] action[174]:GetActionCooldown -> SECRET :: <secret> | <secret> | <secret> | <secret>
+[01:26:23] action[174]:GetActionCharges -> SECRET :: <secret> | <secret> | <secret> | <secret> | <secret>
+[01:26:23] action[174]:IsActionInRange -> NIL :: nil
+[01:26:23] action[174]:C_Spell.GetSpellInfo -> OK :: { castTime=0, name="Aspect of the Turtle", minRange=0, originalIconID=132199, iconID=132199, maxRange=0, spellID=186265 }
+[01:26:23] action[174]:C_Spell.GetSpellCooldown -> SECRET :: { modRate=<secret>, isEnabled=<secret>, startTime=<secret>, duration=<secret> }
+[01:26:23] action[174]:C_Spell.GetSpellCharges -> NIL :: <no values>
+[01:26:23] slot 177 -> type="macro" id=64 subType=""
+[01:26:23] action[177]:IsUsableAction -> OK :: true | false
+[01:26:23] action[177]:GetActionCooldown -> OK :: 0 | 0 | false | 1
+[01:26:23] action[177]:GetActionCharges -> OK :: 0 | 0 | 0 | 0 | 1
+[01:26:23] action[177]:IsActionInRange -> NIL :: nil
+[01:26:23] === SPELLBOOK SCAN ===
+[01:26:23] Spellbook skill lines -> 5
+[01:26:23] SpellLine[1] -> { shouldHide=false, name="General", numSpellBookItems=26, iconID=136830, isGuild=false, itemIndexOffset=0 }
+[01:26:23] SpellBookItem[1] -> { itemType=1, isOffSpec=false, subName="", actionID=382499, name="Anomaly Detection Mark I", iconID=3615519, isPassive=false, spellID=382499 }
+[01:26:23] SpellBookItem[1]:C_Spell.GetSpellCooldown -> SECRET :: { isOnGCD=true, modRate=<secret>, activeCategory=<secret>, isEnabled=<secret>, startTime=<secret>, timeUntilEndOfStartRecovery=<secret>, duration=<secret> }
+[01:26:23] SpellBookItem[2] -> { itemType=1, isOffSpec=false, subName="", actionID=6603, name="Auto Attack", iconID=130730, isPassive=false, spellID=6603 }
+[01:26:23] SpellBookItem[2]:C_Spell.GetSpellCooldown -> SECRET :: { modRate=<secret>, isEnabled=<secret>, startTime=<secret>, duration=<secret> }
+[01:26:23] SpellBookItem[3] -> { itemType=1, isOffSpec=false, subName="", actionID=75, name="Auto Shot", iconID=7232433, isPassive=false, spellID=75 }
+[01:26:23] SpellBookItem[3]:C_Spell.GetSpellCooldown -> SECRET :: { modRate=<secret>, isEnabled=<secret>, startTime=<secret>, duration=<secret> }
+[01:26:23] SpellBookItem[4] -> { itemType=1, isOffSpec=false, subName="Racial", actionID=20572, name="Blood Fury", iconID=135726, isPassive=false, spellID=20572 }
+[01:26:23] SpellBookItem[4]:C_Spell.GetSpellCooldown -> SECRET :: { modRate=<secret>, isEnabled=<secret>, startTime=<secret>, duration=<secret> }
+[01:26:23] SpellBookItem[5] -> { itemType=4, isOffSpec=false, subName="", actionID=223, name="Hero's Path: Battle for Azeroth", iconID=519384, isPassive=false }
+[01:26:23] SpellBookItem[5]:C_Spell.GetSpellCooldown -> NIL :: <no values>
+[01:26:23] SpellBookItem[6] -> { itemType=4, isOffSpec=false, subName="", actionID=224, name="Hero's Path: Legion", iconID=519384, isPassive=false }
+[01:26:23] SpellBookItem[6]:C_Spell.GetSpellCooldown -> NIL :: <no values>
+[01:26:23] SpellBookItem[7] -> { itemType=4, isOffSpec=false, subName="", actionID=96, name="Hero's Path: Warlords of Draenor", iconID=519384, isPassive=false }
+[01:26:23] SpellBookItem[7]:C_Spell.GetSpellCooldown -> SECRET :: { isOnGCD=true, modRate=<secret>, activeCategory=<secret>, isEnabled=<secret>, startTime=<secret>, timeUntilEndOfStartRecovery=<secret>, duration=<secret> }
+[01:26:23] SpellBookItem[8] -> { itemType=1, isOffSpec=false, subName="", actionID=382501, name="Mechanism Bypass", iconID=1125255, isPassive=false, spellID=382501 }
+[01:26:23] SpellBookItem[8]:C_Spell.GetSpellCooldown -> SECRET :: { isOnGCD=true, modRate=<secret>, activeCategory=<secret>, isEnabled=<secret>, startTime=<secret>, timeUntilEndOfStartRecovery=<secret>, duration=<secret> }
+[01:26:23] SpellBookItem[9] -> { itemType=1, isOffSpec=false, subName="Guild Perk", actionID=83958, name="Mobile Banking", iconID=413587, isPassive=false, spellID=83958 }
+[01:26:23] SpellBookItem[9]:C_Spell.GetSpellCooldown -> SECRET :: { modRate=<secret>, isEnabled=<secret>, startTime=<secret>, duration=<secret> }
+[01:26:23] SpellBookItem[10] -> { itemType=1, isOffSpec=false, subName="", actionID=1231411, name="Recuperate", iconID=136074, isPassive=false, spellID=1231411 }
+[01:26:23] SpellBookItem[10]:C_Spell.GetSpellCooldown -> SECRET :: { modRate=<secret>, isEnabled=<secret>, startTime=<secret>, duration=<secret> }
+[01:26:23] SpellBookItem[11] -> { itemType=1, isOffSpec=false, subName="Battle Pets", actionID=125439, name="Revive Battle Pets", iconID=644389, isPassive=false, spellID=125439 }
+[01:26:23] SpellBookItem[11]:C_Spell.GetSpellCooldown -> SECRET :: { modRate=<secret>, isEnabled=<secret>, startTime=<secret>, duration=<secret> }
+[01:26:23] SpellBookItem[12] -> { itemType=4, isOffSpec=false, subName="", actionID=229, name="Skyriding", iconID=4640486, isPassive=false }
+[01:26:23] SpellBookItem[12]:C_Spell.GetSpellCooldown -> NIL :: <no values>
+[01:26:23] SpellBookItem[13] -> { itemType=4, isOffSpec=false, subName="", actionID=243, name="Skyriding Flight Style", iconID=5145511, isPassive=false }
+[01:26:23] SpellBookItem[13]:C_Spell.GetSpellCooldown -> NIL :: <no values>
+[01:26:23] SpellBookItem[14] -> { itemType=4, isOffSpec=false, subName="", actionID=235, name="Warbands", iconID=6124644, isPassive=false }
+[01:26:23] SpellBookItem[14]:C_Spell.GetSpellCooldown -> NIL :: <no values>
+[01:26:23] SpellBookItem[15] -> { itemType=1, isOffSpec=false, subName="Passive", actionID=76250, name="Armor Skills", iconID=132628, isPassive=true, spellID=76250 }
+[01:26:23] SpellBookItem[15]:C_Spell.GetSpellCooldown -> SECRET :: { modRate=<secret>, isEnabled=<secret>, startTime=<secret>, duration=<secret> }
+[01:26:23] SpellLine[1] truncated after 15 items.
+[01:26:23] SpellLine[2] -> { shouldHide=false, name="Hunter", numSpellBookItems=21, iconID=626000, isGuild=false, itemIndexOffset=76 }
+[01:26:23] SpellBookItem[77] -> { skillLineIndex=2, itemType=1, isOffSpec=false, subName="", actionID=61648, name="Aspect of the Chameleon", iconID=463491, isPassive=false, spellID=61648 }
+[01:26:23] SpellBookItem[77]:C_Spell.GetSpellCooldown -> SECRET :: { isOnGCD=true, modRate=<secret>, activeCategory=<secret>, isEnabled=<secret>, startTime=<secret>, timeUntilEndOfStartRecovery=<secret>, duration=<secret> }
+[01:26:23] SpellBookItem[78] -> { skillLineIndex=2, itemType=1, isOffSpec=false, subName="", actionID=186257, name="Aspect of the Cheetah", iconID=132242, isPassive=false, spellID=186257 }
+[01:26:23] SpellBookItem[78]:C_Spell.GetSpellCooldown -> SECRET :: { modRate=<secret>, isEnabled=<secret>, startTime=<secret>, duration=<secret> }
+[01:26:23] SpellBookItem[79] -> { skillLineIndex=2, itemType=1, isOffSpec=false, subName="", actionID=186265, name="Aspect of the Turtle", iconID=132199, isPassive=false, spellID=186265 }
+[01:26:23] SpellBookItem[79]:C_Spell.GetSpellCooldown -> SECRET :: { modRate=<secret>, isEnabled=<secret>, startTime=<secret>, duration=<secret> }
+[01:26:23] SpellBookItem[80] -> { skillLineIndex=2, itemType=1, isOffSpec=false, subName="", actionID=109248, name="Binding Shot", iconID=462650, isPassive=false, spellID=109248 }
+[01:26:23] SpellBookItem[80]:C_Spell.GetSpellCooldown -> SECRET :: { isOnGCD=true, modRate=<secret>, activeCategory=<secret>, isEnabled=<secret>, startTime=<secret>, timeUntilEndOfStartRecovery=<secret>, duration=<secret> }
+[01:26:23] SpellBookItem[81] -> { skillLineIndex=2, itemType=4, isOffSpec=false, subName="", actionID=9, name="Call Pet", iconID=132161, isPassive=false }
+[01:26:23] SpellBookItem[81]:C_Spell.GetSpellCooldown -> NIL :: <no values>
+[01:26:23] SpellBookItem[82] -> { skillLineIndex=2, itemType=1, isOffSpec=false, subName="", actionID=199483, name="Camouflage", iconID=461113, isPassive=false, spellID=199483 }
+[01:26:23] SpellBookItem[82]:C_Spell.GetSpellCooldown -> SECRET :: { modRate=<secret>, isEnabled=<secret>, startTime=<secret>, duration=<secret> }
+[01:26:23] SpellBookItem[83] -> { skillLineIndex=2, itemType=1, isOffSpec=false, subName="", actionID=195645, name="Concussive Shot", iconID=135860, isPassive=false, spellID=5116 }
+[01:26:23] SpellBookItem[83]:C_Spell.GetSpellCooldown -> SECRET :: { isOnGCD=true, modRate=<secret>, activeCategory=<secret>, isEnabled=<secret>, startTime=<secret>, timeUntilEndOfStartRecovery=<secret>, duration=<secret> }
+[01:26:23] SpellBookItem[84] -> { skillLineIndex=2, itemType=1, isOffSpec=false, subName="", actionID=147362, name="Counter Shot", iconID=249170, isPassive=false, spellID=147362 }
+[01:26:23] SpellBookItem[84]:C_Spell.GetSpellCooldown -> SECRET :: { modRate=<secret>, isEnabled=<secret>, startTime=<secret>, duration=<secret> }
+[01:26:23] SpellBookItem[85] -> { skillLineIndex=2, itemType=1, isOffSpec=false, subName="", actionID=781, name="Disengage", iconID=132294, isPassive=false, spellID=781 }
+[01:26:23] SpellBookItem[85]:C_Spell.GetSpellCooldown -> SECRET :: { modRate=<secret>, isEnabled=<secret>, startTime=<secret>, duration=<secret> }
+[01:26:23] SpellBookItem[86] -> { skillLineIndex=2, itemType=1, isOffSpec=false, subName="", actionID=109304, name="Exhilaration", iconID=461117, isPassive=false, spellID=109304 }
+[01:26:23] SpellBookItem[86]:C_Spell.GetSpellCooldown -> SECRET :: { isOnGCD=true, modRate=<secret>, activeCategory=<secret>, isEnabled=<secret>, startTime=<secret>, timeUntilEndOfStartRecovery=<secret>, duration=<secret> }
+[01:26:23] SpellBookItem[87] -> { skillLineIndex=2, itemType=1, isOffSpec=false, subName="", actionID=5384, name="Feign Death", iconID=132293, isPassive=false, spellID=5384 }
+[01:26:23] SpellBookItem[87]:C_Spell.GetSpellCooldown -> SECRET :: { modRate=<secret>, isEnabled=<secret>, startTime=<secret>, duration=<secret> }
+[01:26:23] SpellBookItem[88] -> { skillLineIndex=2, itemType=1, isOffSpec=false, subName="", actionID=125050, name="Fetch", iconID=133718, isPassive=false, spellID=125050 }
+[01:26:23] SpellBookItem[88]:C_Spell.GetSpellCooldown -> SECRET :: { isOnGCD=true, modRate=<secret>, activeCategory=<secret>, isEnabled=<secret>, startTime=<secret>, timeUntilEndOfStartRecovery=<secret>, duration=<secret> }
+[01:26:23] SpellBookItem[89] -> { skillLineIndex=2, itemType=1, isOffSpec=false, subName="", actionID=1543, name="Flare", iconID=135815, isPassive=false, spellID=1543 }
+[01:26:23] SpellBookItem[89]:C_Spell.GetSpellCooldown -> SECRET :: { isOnGCD=true, modRate=<secret>, activeCategory=<secret>, isEnabled=<secret>, startTime=<secret>, timeUntilEndOfStartRecovery=<secret>, duration=<secret> }
+[01:26:23] SpellBookItem[90] -> { skillLineIndex=2, itemType=1, isOffSpec=false, subName="", actionID=187650, name="Freezing Trap", iconID=135834, isPassive=false, spellID=187650 }
+[01:26:23] SpellBookItem[90]:C_Spell.GetSpellCooldown -> SECRET :: { isOnGCD=true, modRate=<secret>, activeCategory=<secret>, isEnabled=<secret>, startTime=<secret>, timeUntilEndOfStartRecovery=<secret>, duration=<secret> }
+[01:26:23] SpellBookItem[91] -> { skillLineIndex=2, itemType=1, isOffSpec=false, subName="", actionID=257284, name="Hunter's Mark", iconID=236188, isPassive=false, spellID=257284 }
+[01:26:23] SpellBookItem[91]:C_Spell.GetSpellCooldown -> SECRET :: { isOnGCD=true, modRate=<secret>, activeCategory=<secret>, isEnabled=<secret>, startTime=<secret>, timeUntilEndOfStartRecovery=<secret>, duration=<secret> }
+[01:26:23] SpellLine[2] truncated after 15 items.
+[01:26:23] SpellLine[3] -> { shouldHide=false, name="Beast Mastery", numSpellBookItems=9, specID=253, iconID=461112, isGuild=false, itemIndexOffset=111 }
+[01:26:23] SpellBookItem[112] -> { skillLineIndex=3, itemType=1, isOffSpec=false, subName="", actionID=56641, name="Barbed Shot", iconID=2058007, isPassive=false, spellID=217200 }
+[01:26:23] SpellBookItem[112]:C_Spell.GetSpellCooldown -> SECRET :: { isOnGCD=true, modRate=<secret>, activeCategory=<secret>, isEnabled=<secret>, startTime=<secret>, timeUntilEndOfStartRecovery=<secret>, duration=<secret> }
+[01:26:23] SpellBookItem[113] -> { skillLineIndex=3, itemType=1, isOffSpec=false, subName="", actionID=19574, name="Bestial Wrath", iconID=132127, isPassive=false, spellID=19574 }
+[01:26:23] SpellBookItem[113]:C_Spell.GetSpellCooldown -> SECRET :: { isOnGCD=true, modRate=<secret>, activeCategory=<secret>, isEnabled=<secret>, startTime=<secret>, timeUntilEndOfStartRecovery=<secret>, duration=<secret> }
+[01:26:23] SpellBookItem[114] -> { skillLineIndex=3, itemType=1, isOffSpec=false, subName="PvP Talent", actionID=356719, name="Chimaeral Sting", iconID=132211, isPassive=false, spellID=356719 }
+[01:26:23] SpellBookItem[114]:C_Spell.GetSpellCooldown -> SECRET :: { isOnGCD=true, modRate=<secret>, activeCategory=<secret>, isEnabled=<secret>, startTime=<secret>, timeUntilEndOfStartRecovery=<secret>, duration=<secret> }
+[01:26:23] SpellBookItem[115] -> { skillLineIndex=3, itemType=1, isOffSpec=false, subName="", actionID=185358, name="Cobra Shot", iconID=461114, isPassive=false, spellID=193455 }
+[01:26:23] SpellBookItem[115]:C_Spell.GetSpellCooldown -> SECRET :: { isOnGCD=true, modRate=<secret>, activeCategory=<secret>, isEnabled=<secret>, startTime=<secret>, timeUntilEndOfStartRecovery=<secret>, duration=<secret> }
+[01:26:23] SpellBookItem[116] -> { skillLineIndex=3, itemType=1, isOffSpec=false, subName="", actionID=321297, name="Eyes of the Beast", iconID=132150, isPassive=false, spellID=321297 }
+[01:26:23] SpellBookItem[116]:C_Spell.GetSpellCooldown -> SECRET :: { isOnGCD=true, modRate=<secret>, activeCategory=<secret>, isEnabled=<secret>, startTime=<secret>, timeUntilEndOfStartRecovery=<secret>, duration=<secret> }
+[01:26:23] SpellBookItem[117] -> { skillLineIndex=3, itemType=1, isOffSpec=false, subName="", actionID=19577, name="Intimidation", iconID=132111, isPassive=false, spellID=19577 }
+[01:26:23] SpellBookItem[117]:C_Spell.GetSpellCooldown -> SECRET :: { isOnGCD=true, modRate=<secret>, activeCategory=<secret>, isEnabled=<secret>, startTime=<secret>, timeUntilEndOfStartRecovery=<secret>, duration=<secret> }
+[01:26:23] SpellBookItem[118] -> { skillLineIndex=3, itemType=1, isOffSpec=false, subName="", actionID=1264359, name="Wild Thrash", iconID=461121, isPassive=false, spellID=1264359 }
+[01:26:23] SpellBookItem[118]:C_Spell.GetSpellCooldown -> SECRET :: { isOnGCD=true, modRate=<secret>, activeCategory=<secret>, isEnabled=<secret>, startTime=<secret>, timeUntilEndOfStartRecovery=<secret>, duration=<secret> }
+[01:26:23] SpellBookItem[119] -> { skillLineIndex=3, itemType=1, isOffSpec=false, subName="", actionID=53270, name="Exotic Beasts", iconID=236175, isPassive=true, spellID=53270 }
+[01:26:23] SpellBookItem[119]:C_Spell.GetSpellCooldown -> SECRET :: { modRate=<secret>, isEnabled=<secret>, startTime=<secret>, duration=<secret> }
+[01:26:23] SpellBookItem[120] -> { skillLineIndex=3, itemType=1, isOffSpec=false, subName="", actionID=76657, name="Mastery: Master of Beasts", iconID=132164, isPassive=true, spellID=76657 }
+[01:26:23] SpellBookItem[120]:C_Spell.GetSpellCooldown -> SECRET :: { modRate=<secret>, isEnabled=<secret>, startTime=<secret>, duration=<secret> }
+[01:26:23] SpellLine[4] -> { shouldHide=false, offSpecID=254, name="Marksmanship", numSpellBookItems=16, specID=254, iconID=236179, isGuild=false, itemIndexOffset=121 }
+[01:26:23] SpellBookItem[122] -> { skillLineIndex=4, itemType=1, isOffSpec=true, subName="", actionID=19434, name="Aimed Shot", iconID=135130, isPassive=false, spellID=19434 }
+[01:26:23] SpellBookItem[122]:C_Spell.GetSpellCooldown -> SECRET :: { isOnGCD=true, modRate=<secret>, activeCategory=<secret>, isEnabled=<secret>, startTime=<secret>, timeUntilEndOfStartRecovery=<secret>, duration=<secret> }
+[01:26:23] SpellBookItem[123] -> { skillLineIndex=4, itemType=1, isOffSpec=true, subName="", actionID=185358, name="Arcane Shot", iconID=132218, isPassive=false, spellID=185358 }
+[01:26:23] SpellBookItem[123]:C_Spell.GetSpellCooldown -> SECRET :: { isOnGCD=true, modRate=<secret>, activeCategory=<secret>, isEnabled=<secret>, startTime=<secret>, timeUntilEndOfStartRecovery=<secret>, duration=<secret> }
+[01:26:23] SpellBookItem[124] -> { skillLineIndex=4, itemType=1, isOffSpec=true, subName="", actionID=6197, name="Eagle Eye", iconID=132172, isPassive=false, spellID=6197 }
+[01:26:23] SpellBookItem[124]:C_Spell.GetSpellCooldown -> SECRET :: { isOnGCD=true, modRate=<secret>, activeCategory=<secret>, isEnabled=<secret>, startTime=<secret>, timeUntilEndOfStartRecovery=<secret>, duration=<secret> }
+[01:26:23] SpellBookItem[125] -> { skillLineIndex=4, itemType=1, isOffSpec=true, subName="", actionID=1232995, name="Fetch: Eagle", iconID=6352454, isPassive=false, spellID=1232995 }
+[01:26:23] SpellBookItem[125]:C_Spell.GetSpellCooldown -> SECRET :: { isOnGCD=true, modRate=<secret>, activeCategory=<secret>, isEnabled=<secret>, startTime=<secret>, timeUntilEndOfStartRecovery=<secret>, duration=<secret> }
+[01:26:23] SpellBookItem[126] -> { skillLineIndex=4, itemType=1, isOffSpec=true, subName="", actionID=466904, name="Harrier's Cry", iconID=6352455, isPassive=false, spellID=466904 }
+[01:26:23] SpellBookItem[126]:C_Spell.GetSpellCooldown -> SECRET :: { modRate=<secret>, isEnabled=<secret>, startTime=<secret>, duration=<secret> }
+[01:26:23] SpellBookItem[127] -> { skillLineIndex=4, itemType=1, isOffSpec=true, subName="", actionID=474421, name="Intimidation", iconID=1392564, isPassive=false, spellID=474421 }
+[01:26:23] SpellBookItem[127]:C_Spell.GetSpellCooldown -> SECRET :: { isOnGCD=true, modRate=<secret>, activeCategory=<secret>, isEnabled=<secret>, startTime=<secret>, timeUntilEndOfStartRecovery=<secret>, duration=<secret> }
+[01:26:23] SpellBookItem[128] -> { skillLineIndex=4, itemType=1, isOffSpec=true, subName="", actionID=257620, name="Multi-Shot", iconID=132330, isPassive=false, spellID=257620 }
+[01:26:23] SpellBookItem[128]:C_Spell.GetSpellCooldown -> SECRET :: { isOnGCD=true, modRate=<secret>, activeCategory=<secret>, isEnabled=<secret>, startTime=<secret>, timeUntilEndOfStartRecovery=<secret>, duration=<secret> }
+[01:26:23] SpellBookItem[129] -> { skillLineIndex=4, itemType=1, isOffSpec=true, subName="", actionID=257044, name="Rapid Fire", iconID=461115, isPassive=false, spellID=257044 }
+[01:26:23] SpellBookItem[129]:C_Spell.GetSpellCooldown -> SECRET :: { isOnGCD=true, modRate=<secret>, activeCategory=<secret>, isEnabled=<secret>, startTime=<secret>, timeUntilEndOfStartRecovery=<secret>, duration=<secret> }
+[01:26:23] SpellBookItem[130] -> { skillLineIndex=4, itemType=1, isOffSpec=true, subName="", actionID=56641, name="Steady Shot", iconID=132213, isPassive=false, spellID=56641 }
+[01:26:23] SpellBookItem[130]:C_Spell.GetSpellCooldown -> SECRET :: { isOnGCD=true, modRate=<secret>, activeCategory=<secret>, isEnabled=<secret>, startTime=<secret>, timeUntilEndOfStartRecovery=<secret>, duration=<secret> }
+[01:26:23] SpellBookItem[131] -> { skillLineIndex=4, itemType=1, isOffSpec=true, subName="", actionID=288613, name="Trueshot", iconID=132329, isPassive=false, spellID=288613 }
+[01:26:23] SpellBookItem[131]:C_Spell.GetSpellCooldown -> SECRET :: { modRate=<secret>, isEnabled=<secret>, startTime=<secret>, duration=<secret> }
+[01:26:23] SpellBookItem[132] -> { skillLineIndex=4, itemType=1, isOffSpec=true, subName="", actionID=260243, name="Volley", iconID=132205, isPassive=false, spellID=260243 }
+[01:26:23] SpellBookItem[132]:C_Spell.GetSpellCooldown -> SECRET :: { isOnGCD=true, modRate=<secret>, activeCategory=<secret>, isEnabled=<secret>, startTime=<secret>, timeUntilEndOfStartRecovery=<secret>, duration=<secret> }
+[01:26:23] SpellBookItem[133] -> { skillLineIndex=4, itemType=1, isOffSpec=true, subName="", actionID=470937, name="Air Superiority", iconID=6352450, isPassive=true, spellID=470937 }
+[01:26:23] SpellBookItem[133]:C_Spell.GetSpellCooldown -> SECRET :: { modRate=<secret>, isEnabled=<secret>, startTime=<secret>, duration=<secret> }
+[01:26:23] SpellBookItem[134] -> { skillLineIndex=4, itemType=1, isOffSpec=true, subName="", actionID=467749, name="Bleak Arrows", iconID=4093739, isPassive=true, spellID=467749 }
+[01:26:23] SpellBookItem[134]:C_Spell.GetSpellCooldown -> SECRET :: { modRate=<secret>, isEnabled=<secret>, startTime=<secret>, duration=<secret> }
+[01:26:23] SpellBookItem[135] -> { skillLineIndex=4, itemType=1, isOffSpec=true, subName="", actionID=1217788, name="Manhunter", iconID=236183, isPassive=true, spellID=1217788 }
+[01:26:23] SpellBookItem[135]:C_Spell.GetSpellCooldown -> SECRET :: { modRate=<secret>, isEnabled=<secret>, startTime=<secret>, duration=<secret> }
+[01:26:23] SpellBookItem[136] -> { skillLineIndex=4, itemType=1, isOffSpec=true, subName="Mastery", actionID=193468, name="Mastery: Sniper Training", iconID=236203, isPassive=true, spellID=193468 }
+[01:26:23] SpellBookItem[136]:C_Spell.GetSpellCooldown -> SECRET :: { modRate=<secret>, isEnabled=<secret>, startTime=<secret>, duration=<secret> }
+[01:26:23] SpellLine[4] truncated after 15 items.
+[01:26:23] SpellLine[5] -> { shouldHide=false, offSpecID=255, name="Survival", numSpellBookItems=11, specID=255, iconID=461113, isGuild=false, itemIndexOffset=137 }
+[01:26:23] SpellBookItem[138] -> { skillLineIndex=5, itemType=1, isOffSpec=true, subName="", actionID=186289, name="Aspect of the Eagle", iconID=612363, isPassive=false, spellID=186289 }
+[01:26:23] SpellBookItem[138]:C_Spell.GetSpellCooldown -> SECRET :: { modRate=<secret>, isEnabled=<secret>, startTime=<secret>, duration=<secret> }
+[01:26:23] SpellBookItem[139] -> { skillLineIndex=5, itemType=1, isOffSpec=true, subName="", actionID=1261193, name="Boomstick", iconID=134538, isPassive=false, spellID=1261193 }
+[01:26:23] SpellBookItem[139]:C_Spell.GetSpellCooldown -> SECRET :: { isOnGCD=true, modRate=<secret>, activeCategory=<secret>, isEnabled=<secret>, startTime=<secret>, timeUntilEndOfStartRecovery=<secret>, duration=<secret> }
+[01:26:23] SpellBookItem[140] -> { skillLineIndex=5, itemType=1, isOffSpec=true, subName="", actionID=321297, name="Eyes of the Beast", iconID=132150, isPassive=false, spellID=321297 }
+[01:26:23] SpellBookItem[140]:C_Spell.GetSpellCooldown -> SECRET :: { isOnGCD=true, modRate=<secret>, activeCategory=<secret>, isEnabled=<secret>, startTime=<secret>, timeUntilEndOfStartRecovery=<secret>, duration=<secret> }
+[01:26:23] SpellBookItem[141] -> { skillLineIndex=5, itemType=1, isOffSpec=true, subName="", actionID=1251592, name="Flamefang Pitch", iconID=4622294, isPassive=false, spellID=1251592 }
+[01:26:23] SpellBookItem[141]:C_Spell.GetSpellCooldown -> SECRET :: { isOnGCD=true, modRate=<secret>, activeCategory=<secret>, isEnabled=<secret>, startTime=<secret>, timeUntilEndOfStartRecovery=<secret>, duration=<secret> }
+[01:26:23] SpellBookItem[142] -> { skillLineIndex=5, itemType=1, isOffSpec=true, subName="", actionID=190925, name="Harpoon", iconID=1376040, isPassive=false, spellID=190925 }
+[01:26:23] SpellBookItem[142]:C_Spell.GetSpellCooldown -> SECRET :: { modRate=<secret>, isEnabled=<secret>, startTime=<secret>, duration=<secret> }
+[01:26:23] SpellBookItem[143] -> { skillLineIndex=5, itemType=1, isOffSpec=true, subName="", actionID=193265, name="Hatchet Toss", iconID=1376041, isPassive=false, spellID=193265 }
+[01:26:23] SpellBookItem[143]:C_Spell.GetSpellCooldown -> SECRET :: { isOnGCD=true, modRate=<secret>, activeCategory=<secret>, isEnabled=<secret>, startTime=<secret>, timeUntilEndOfStartRecovery=<secret>, duration=<secret> }
+[01:26:23] SpellBookItem[144] -> { skillLineIndex=5, itemType=1, isOffSpec=true, subName="", actionID=186270, name="Raptor Strike", iconID=1376046, isPassive=false, spellID=186270 }
+[01:26:23] SpellBookItem[144]:C_Spell.GetSpellCooldown -> SECRET :: { isOnGCD=true, modRate=<secret>, activeCategory=<secret>, isEnabled=<secret>, startTime=<secret>, timeUntilEndOfStartRecovery=<secret>, duration=<secret> }
+[01:26:23] SpellBookItem[145] -> { skillLineIndex=5, itemType=1, isOffSpec=true, subName="", actionID=56641, name="Steady Shot", iconID=132213, isPassive=false, spellID=56641 }
+[01:26:23] SpellBookItem[145]:C_Spell.GetSpellCooldown -> SECRET :: { isOnGCD=true, modRate=<secret>, activeCategory=<secret>, isEnabled=<secret>, startTime=<secret>, timeUntilEndOfStartRecovery=<secret>, duration=<secret> }
+[01:26:23] SpellBookItem[146] -> { skillLineIndex=5, itemType=1, isOffSpec=true, subName="", actionID=1250646, name="Takedown", iconID=7439201, isPassive=false, spellID=1250646 }
+[01:26:23] SpellBookItem[146]:C_Spell.GetSpellCooldown -> SECRET :: { isOnGCD=true, modRate=<secret>, activeCategory=<secret>, isEnabled=<secret>, startTime=<secret>, timeUntilEndOfStartRecovery=<secret>, duration=<secret> }
+[01:26:23] SpellBookItem[147] -> { skillLineIndex=5, itemType=1, isOffSpec=true, subName="", actionID=259495, name="Wildfire Bomb", iconID=2065634, isPassive=false, spellID=259495 }
+[01:26:23] SpellBookItem[147]:C_Spell.GetSpellCooldown -> SECRET :: { isOnGCD=true, modRate=<secret>, activeCategory=<secret>, isEnabled=<secret>, startTime=<secret>, timeUntilEndOfStartRecovery=<secret>, duration=<secret> }
+[01:26:23] SpellBookItem[148] -> { skillLineIndex=5, itemType=1, isOffSpec=true, subName="", actionID=263135, name="Mastery: Spirit Bond", iconID=132166, isPassive=true, spellID=263135 }
+[01:26:23] SpellBookItem[148]:C_Spell.GetSpellCooldown -> SECRET :: { modRate=<secret>, isEnabled=<secret>, startTime=<secret>, duration=<secret> }
+[01:26:23] END FULL SCAN
+[01:26:23] ========================================
+[01:26:23] EVENT -> UNIT_SPELLCAST_FAILED unit=player target=nil spellID=1264359 castGUID=Cast-2-0-0-0-1264359-000000064C
+[01:26:24] EVENT -> UNIT_SPELLCAST_SENT unit=player target=PvP Training Dummy spellID=1264359 castGUID=Cast-3-4210-0-24377-1264359-0018C0CEFF
+[01:26:24] EVENT -> UNIT_SPELLCAST_SUCCEEDED unit=player target=nil spellID=1264359 castGUID=Cast-3-4210-0-24377-1264359-0018C0CEFF
+[01:26:24] === NAMEPLATE SCAN ===
+[01:26:24] === UNIT(LITE) nameplate1 ===
+[01:26:24] nameplate1:UnitExists -> OK :: true
+[01:26:24] nameplate1:UnitGUID -> OK :: "Creature-0-4210-0-24377-243211-00003ED2D2"
+[01:26:24] nameplate1:UnitName -> OK :: "PvP Training Dummy" | nil
+[01:26:24] nameplate1:UnitCanAttack -> OK :: true
+[01:26:24] nameplate1:UnitHealth -> SECRET :: <secret>
+[01:26:24] nameplate1:UnitHealthMax -> SECRET :: <secret>
+[01:26:24] nameplate1:UnitPower -> SECRET :: <secret>
+[01:26:24] nameplate1:UnitPowerMax -> SECRET :: <secret>
+[01:26:24] nameplate1:UnitCastingInfo -> NIL :: <no values>
+[01:26:24] nameplate1:UnitChannelInfo -> NIL :: <no values>
+[01:26:24] === AURAS unit=nameplate1 filter=HARMFUL limit=3 ===
+[01:26:24] HARMFUL aura[1] secretHint=true -> { name=<secret>, spellId=<secret>, applications=<secret>, dispelName=<secret>, duration=<secret>, expirationTime=<secret>, sourceUnit=<secret>, isStealable=<secret>, isBossAura=<secret>, isFromPlayerOrPlayerPet=<secret>, canApplyAura=<secret>, nameplateShowPersonal=<secret>, timeMod=<secret>, points=<secret> }
+[01:26:24] HARMFUL aura[2] secretHint=true -> { name=<secret>, spellId=<secret>, applications=<secret>, dispelName=<secret>, duration=<secret>, expirationTime=<secret>, sourceUnit=<secret>, isStealable=<secret>, isBossAura=<secret>, isFromPlayerOrPlayerPet=<secret>, canApplyAura=<secret>, nameplateShowPersonal=<secret>, timeMod=<secret>, points=<secret> }
+[01:26:24] HARMFUL aura[3] secretHint=true -> { name=<secret>, spellId=<secret>, applications=<secret>, duration=<secret>, expirationTime=<secret>, sourceUnit=<secret>, isStealable=<secret>, isBossAura=<secret>, isFromPlayerOrPlayerPet=<secret>, canApplyAura=<secret>, nameplateShowPersonal=<secret>, timeMod=<secret>, points=<secret> }
+[01:26:24] === UNIT(LITE) nameplate2 ===
+[01:26:24] nameplate2:UnitExists -> OK :: true
+[01:26:24] nameplate2:UnitGUID -> OK :: "Creature-0-4210-0-24377-243211-0000BED2D2"
+[01:26:24] nameplate2:UnitName -> OK :: "PvP Training Dummy" | nil
+[01:26:24] nameplate2:UnitCanAttack -> OK :: true
+[01:26:24] nameplate2:UnitHealth -> SECRET :: <secret>
+[01:26:24] nameplate2:UnitHealthMax -> SECRET :: <secret>
+[01:26:24] nameplate2:UnitPower -> SECRET :: <secret>
+[01:26:24] nameplate2:UnitPowerMax -> SECRET :: <secret>
+[01:26:24] nameplate2:UnitCastingInfo -> NIL :: <no values>
+[01:26:24] nameplate2:UnitChannelInfo -> NIL :: <no values>
+[01:26:24] === AURAS unit=nameplate2 filter=HARMFUL limit=3 ===
+[01:26:24] HARMFUL aura list empty or inaccessible.
+[01:26:24] No HARMFUL auras detected in first 3 slots.
+[01:26:24] === UNIT(LITE) nameplate3 ===
+[01:26:24] nameplate3:UnitExists -> OK :: true
+[01:26:24] nameplate3:UnitGUID -> OK :: "Creature-0-4210-0-24377-243211-00013ED2D2"
+[01:26:24] nameplate3:UnitName -> OK :: "PvP Training Dummy" | nil
+[01:26:24] nameplate3:UnitCanAttack -> OK :: true
+[01:26:24] nameplate3:UnitHealth -> SECRET :: <secret>
+[01:26:24] nameplate3:UnitHealthMax -> SECRET :: <secret>
+[01:26:24] nameplate3:UnitPower -> SECRET :: <secret>
+[01:26:24] nameplate3:UnitPowerMax -> SECRET :: <secret>
+[01:26:24] nameplate3:UnitCastingInfo -> NIL :: <no values>
+[01:26:24] nameplate3:UnitChannelInfo -> NIL :: <no values>
+[01:26:24] === AURAS unit=nameplate3 filter=HARMFUL limit=3 ===
+[01:26:24] HARMFUL aura list empty or inaccessible.
+[01:26:24] No HARMFUL auras detected in first 3 slots.
+[01:26:24] === UNIT(LITE) nameplate4 ===
+[01:26:24] nameplate4:UnitExists -> OK :: true
+[01:26:24] nameplate4:UnitGUID -> OK :: "Creature-0-4210-0-24377-243211-00003ED2D3"
+[01:26:24] nameplate4:UnitName -> OK :: "PvP Training Dummy" | nil
+[01:26:24] nameplate4:UnitCanAttack -> OK :: true
+[01:26:24] nameplate4:UnitHealth -> SECRET :: <secret>
+[01:26:24] nameplate4:UnitHealthMax -> SECRET :: <secret>
+[01:26:24] nameplate4:UnitPower -> SECRET :: <secret>
+[01:26:24] nameplate4:UnitPowerMax -> SECRET :: <secret>
+[01:26:24] nameplate4:UnitCastingInfo -> NIL :: <no values>
+[01:26:24] nameplate4:UnitChannelInfo -> NIL :: <no values>
+[01:26:24] === AURAS unit=nameplate4 filter=HARMFUL limit=3 ===
+[01:26:24] HARMFUL aura list empty or inaccessible.
+[01:26:24] No HARMFUL auras detected in first 3 slots.
+[01:26:24] EVENT -> UNIT_SPELLCAST_SUCCEEDED unit=player target=nil spellID=75 castGUID=Cast-3-4210-0-24377-75-003DC0CEFF
+[01:26:25] EVENT -> UNIT_SPELLCAST_SENT unit=player target=nil spellID=19574 castGUID=Cast-3-4210-0-24377-19574-0043C0CF00
+[01:26:25] EVENT -> UNIT_SPELLCAST_SUCCEEDED unit=player target=nil spellID=19574 castGUID=Cast-3-4210-0-24377-19574-0043C0CF00
+[01:26:27] EVENT -> UNIT_SPELLCAST_SENT unit=player target=PvP Training Dummy spellID=217200 castGUID=Cast-3-4210-0-24377-56641-000540CF02
+[01:26:27] EVENT -> UNIT_SPELLCAST_SUCCEEDED unit=player target=nil spellID=217200 castGUID=Cast-3-4210-0-24377-56641-000540CF02
+[01:26:27] EVENT -> UNIT_SPELLCAST_SUCCEEDED unit=player target=nil spellID=75 castGUID=Cast-3-4210-0-24377-75-002EC0CF02
+[01:26:28] EVENT -> UNIT_SPELLCAST_SENT unit=player target=PvP Training Dummy spellID=34026 castGUID=Cast-3-4210-0-24377-34026-003740CF03
+[01:26:28] EVENT -> UNIT_SPELLCAST_SUCCEEDED unit=player target=nil spellID=34026 castGUID=Cast-3-4210-0-24377-34026-003740CF03
+[01:26:29] EVENT -> UNIT_SPELLCAST_FAILED unit=player target=nil spellID=34026 castGUID=Cast-2-0-0-0-34026-0000000653
+[01:26:30] EVENT -> UNIT_SPELLCAST_SENT unit=player target=PvP Training Dummy spellID=34026 castGUID=Cast-3-4210-0-24377-34026-004640CF04
+[01:26:30] EVENT -> UNIT_SPELLCAST_SUCCEEDED unit=player target=nil spellID=34026 castGUID=Cast-3-4210-0-24377-34026-004640CF04
+[01:26:30] EVENT -> UNIT_SPELLCAST_SUCCEEDED unit=player target=nil spellID=75 castGUID=Cast-3-4210-0-24377-75-001E40CF05
+[01:26:31] EVENT -> UNIT_SPELLCAST_FAILED unit=player target=nil spellID=34026 castGUID=Cast-2-0-0-0-34026-0000000655
+[01:26:31] EVENT -> UNIT_SPELLCAST_FAILED unit=player target=nil spellID=34026 castGUID=Cast-2-0-0-0-34026-0000000656
+[01:26:31] EVENT -> UNIT_SPELLCAST_FAILED unit=player target=nil spellID=34026 castGUID=Cast-2-0-0-0-34026-0000000657
+[01:26:31] EVENT -> UNIT_SPELLCAST_FAILED unit=player target=nil spellID=34026 castGUID=Cast-2-0-0-0-34026-0000000658
+[01:26:31] EVENT -> UNIT_SPELLCAST_FAILED unit=player target=nil spellID=34026 castGUID=Cast-2-0-0-0-34026-0000000659
+[01:26:32] EVENT -> UNIT_SPELLCAST_SENT unit=player target=PvP Training Dummy spellID=1264359 castGUID=Cast-3-4210-0-24377-1264359-001F40CF07
+[01:26:32] EVENT -> UNIT_SPELLCAST_SUCCEEDED unit=player target=nil spellID=1264359 castGUID=Cast-3-4210-0-24377-1264359-001F40CF07
+[01:26:33] EVENT -> UNIT_SPELLCAST_SUCCEEDED unit=player target=nil spellID=75 castGUID=Cast-3-4210-0-24377-75-000340CF08
+[01:26:33] EVENT -> UNIT_SPELLCAST_FAILED unit=player target=nil spellID=34026 castGUID=Cast-2-0-0-0-34026-000000065C
+[01:26:33] EVENT -> UNIT_SPELLCAST_FAILED unit=player target=nil spellID=34026 castGUID=Cast-2-0-0-0-34026-000000065D
+[01:26:33] EVENT -> UNIT_SPELLCAST_FAILED unit=player target=nil spellID=34026 castGUID=Cast-2-0-0-0-34026-000000065E
+[01:26:34] EVENT -> UNIT_SPELLCAST_FAILED unit=player target=nil spellID=34026 castGUID=Cast-2-0-0-0-34026-000000065F
+[01:26:34] EVENT -> UNIT_SPELLCAST_FAILED unit=player target=nil spellID=34026 castGUID=Cast-2-0-0-0-34026-0000000660
+[01:26:34] EVENT -> UNIT_SPELLCAST_FAILED unit=player target=nil spellID=34026 castGUID=Cast-2-0-0-0-34026-0000000661
+[01:26:34] EVENT -> UNIT_SPELLCAST_FAILED unit=player target=nil spellID=34026 castGUID=Cast-2-0-0-0-34026-0000000662
+[01:26:35] EVENT -> UNIT_SPELLCAST_FAILED unit=player target=nil spellID=34026 castGUID=Cast-2-0-0-0-34026-0000000663
+[01:26:35] EVENT -> UNIT_SPELLCAST_FAILED unit=player target=nil spellID=34026 castGUID=Cast-2-0-0-0-34026-0000000664
+[01:26:36] EVENT -> UNIT_SPELLCAST_SENT unit=player target=PvP Training Dummy spellID=34026 castGUID=Cast-3-4210-0-24377-34026-003640CF0A
+[01:26:36] EVENT -> UNIT_SPELLCAST_SUCCEEDED unit=player target=nil spellID=34026 castGUID=Cast-3-4210-0-24377-34026-003640CF0A
+[01:26:36] EVENT -> UNIT_SPELLCAST_SUCCEEDED unit=player target=nil spellID=75 castGUID=Cast-3-4210-0-24377-75-0041C0CF0A
+[01:26:36] EVENT -> UNIT_SPELLCAST_FAILED unit=player target=nil spellID=34026 castGUID=Cast-2-0-0-0-34026-0000000666
+[01:26:37] EVENT -> UNIT_SPELLCAST_FAILED unit=player target=nil spellID=34026 castGUID=Cast-2-0-0-0-34026-0000000667
+[01:26:37] EVENT -> UNIT_SPELLCAST_FAILED unit=player target=nil spellID=34026 castGUID=Cast-2-0-0-0-34026-0000000668
+[01:26:37] EVENT -> UNIT_SPELLCAST_FAILED unit=player target=nil spellID=34026 castGUID=Cast-2-0-0-0-34026-0000000669
+[01:26:38] EVENT -> UNIT_SPELLCAST_FAILED unit=player target=nil spellID=34026 castGUID=Cast-2-0-0-0-34026-000000066A
+[01:26:38] EVENT -> UNIT_SPELLCAST_FAILED unit=player target=nil spellID=34026 castGUID=Cast-2-0-0-0-34026-000000066B
+[01:26:38] EVENT -> UNIT_SPELLCAST_FAILED unit=player target=nil spellID=34026 castGUID=Cast-2-0-0-0-34026-000000066C
+[01:26:38] EVENT -> UNIT_SPELLCAST_FAILED unit=player target=nil spellID=34026 castGUID=Cast-2-0-0-0-34026-000000066D
+[01:26:38] EVENT -> UNIT_SPELLCAST_SUCCEEDED unit=player target=nil spellID=75 castGUID=Cast-3-4210-0-24377-75-0035C0CF0D
+[01:26:38] EVENT -> UNIT_SPELLCAST_FAILED unit=player target=nil spellID=34026 castGUID=Cast-2-0-0-0-34026-000000066E
+[01:26:38] EVENT -> UNIT_SPELLCAST_FAILED unit=player target=nil spellID=34026 castGUID=Cast-2-0-0-0-34026-000000066F
+[01:26:39] EVENT -> UNIT_SPELLCAST_FAILED unit=player target=nil spellID=34026 castGUID=Cast-2-0-0-0-34026-0000000670
+[01:26:39] EVENT -> UNIT_SPELLCAST_FAILED unit=player target=nil spellID=34026 castGUID=Cast-2-0-0-0-34026-0000000671
+[01:26:39] EVENT -> UNIT_SPELLCAST_FAILED unit=player target=nil spellID=34026 castGUID=Cast-2-0-0-0-34026-0000000672
+[01:26:39] EVENT -> UNIT_SPELLCAST_FAILED unit=player target=nil spellID=34026 castGUID=Cast-2-0-0-0-34026-0000000673
+[01:26:39] EVENT -> UNIT_SPELLCAST_FAILED unit=player target=nil spellID=34026 castGUID=Cast-2-0-0-0-34026-0000000674
+[01:26:40] EVENT -> UNIT_SPELLCAST_FAILED unit=player target=nil spellID=34026 castGUID=Cast-2-0-0-0-34026-0000000675
+[01:26:40] EVENT -> UNIT_SPELLCAST_SENT unit=player target=PvP Training Dummy spellID=1264359 castGUID=Cast-3-4210-0-24377-1264359-0024C0CF0F
+[01:26:40] EVENT -> UNIT_SPELLCAST_SUCCEEDED unit=player target=nil spellID=1264359 castGUID=Cast-3-4210-0-24377-1264359-0024C0CF0F
+[01:26:41] EVENT -> UNIT_SPELLCAST_FAILED unit=player target=nil spellID=34026 castGUID=Cast-2-0-0-0-34026-0000000677
+[01:26:41] EVENT -> UNIT_SPELLCAST_SUCCEEDED unit=player target=nil spellID=75 castGUID=Cast-3-4210-0-24377-75-003140CF10
+[01:26:41] EVENT -> UNIT_SPELLCAST_FAILED unit=player target=nil spellID=34026 castGUID=Cast-2-0-0-0-34026-0000000678
+[01:26:41] EVENT -> UNIT_SPELLCAST_FAILED unit=player target=nil spellID=34026 castGUID=Cast-2-0-0-0-34026-0000000679
+[01:26:42] EVENT -> UNIT_SPELLCAST_FAILED unit=player target=nil spellID=34026 castGUID=Cast-2-0-0-0-34026-000000067A
+[01:26:42] EVENT -> UNIT_SPELLCAST_SENT unit=player target=PvP Training Dummy spellID=34026 castGUID=Cast-3-4210-0-24377-34026-003F40CF11
+[01:26:42] EVENT -> UNIT_SPELLCAST_SUCCEEDED unit=player target=nil spellID=34026 castGUID=Cast-3-4210-0-24377-34026-003F40CF11
+[01:26:43] EVENT -> UNIT_SPELLCAST_FAILED unit=player target=nil spellID=217200 castGUID=Cast-2-0-0-0-217200-000000067C
+[01:26:44] EVENT -> UNIT_SPELLCAST_SENT unit=player target=PvP Training Dummy spellID=217200 castGUID=Cast-3-4210-0-24377-56641-0002C0CF13
+[01:26:44] EVENT -> UNIT_SPELLCAST_SUCCEEDED unit=player target=nil spellID=217200 castGUID=Cast-3-4210-0-24377-56641-0002C0CF13
+[01:26:44] EVENT -> UNIT_SPELLCAST_SUCCEEDED unit=player target=nil spellID=75 castGUID=Cast-3-4210-0-24377-75-0006C0CF13
+[01:26:45] EVENT -> UNIT_SPELLCAST_FAILED unit=player target=nil spellID=34026 castGUID=Cast-2-0-0-0-34026-000000067F
+[01:26:45] EVENT -> UNIT_SPELLCAST_FAILED unit=player target=nil spellID=34026 castGUID=Cast-2-0-0-0-34026-0000000680
+[01:26:45] EVENT -> UNIT_SPELLCAST_FAILED unit=player target=nil spellID=34026 castGUID=Cast-2-0-0-0-34026-0000000681
+[01:26:46] EVENT -> UNIT_SPELLCAST_FAILED unit=player target=nil spellID=34026 castGUID=Cast-2-0-0-0-34026-0000000682
+[01:26:46] EVENT -> UNIT_SPELLCAST_SENT unit=player target=PvP Training Dummy spellID=34026 castGUID=Cast-3-4210-0-24377-34026-0038C0CF15
+[01:26:46] EVENT -> UNIT_SPELLCAST_SUCCEEDED unit=player target=nil spellID=34026 castGUID=Cast-3-4210-0-24377-34026-0038C0CF15
+[01:26:47] EVENT -> UNIT_SPELLCAST_SUCCEEDED unit=player target=nil spellID=75 castGUID=Cast-3-4210-0-24377-75-000040CF16
+[01:26:48] EVENT -> UNIT_SPELLCAST_FAILED unit=player target=nil spellID=34026 castGUID=Cast-2-0-0-0-34026-0000000684
+[01:26:48] EVENT -> UNIT_SPELLCAST_SENT unit=player target=PvP Training Dummy spellID=1264359 castGUID=Cast-3-4210-0-24377-1264359-001DC0CF17
+[01:26:48] EVENT -> UNIT_SPELLCAST_SUCCEEDED unit=player target=nil spellID=1264359 castGUID=Cast-3-4210-0-24377-1264359-001DC0CF17
+[01:26:49] EVENT -> UNIT_SPELLCAST_FAILED unit=player target=nil spellID=34026 castGUID=Cast-2-0-0-0-34026-0000000686
+[01:26:49] EVENT -> UNIT_SPELLCAST_FAILED unit=player target=nil spellID=34026 castGUID=Cast-2-0-0-0-34026-0000000687
+[01:26:50] EVENT -> UNIT_SPELLCAST_SUCCEEDED unit=player target=nil spellID=75 castGUID=Cast-3-4210-0-24377-75-004EC0CF18
+[01:26:50] EVENT -> UNIT_SPELLCAST_FAILED unit=player target=nil spellID=34026 castGUID=Cast-2-0-0-0-34026-0000000688
+[01:26:50] EVENT -> UNIT_SPELLCAST_FAILED unit=player target=nil spellID=34026 castGUID=Cast-2-0-0-0-34026-0000000689
+[01:26:50] EVENT -> UNIT_SPELLCAST_FAILED unit=player target=nil spellID=34026 castGUID=Cast-2-0-0-0-34026-000000068A
+[01:26:50] EVENT -> UNIT_SPELLCAST_FAILED unit=player target=nil spellID=34026 castGUID=Cast-2-0-0-0-34026-000000068B
+[01:26:50] EVENT -> UNIT_SPELLCAST_FAILED unit=player target=nil spellID=34026 castGUID=Cast-2-0-0-0-34026-000000068C
+[01:26:51] EVENT -> UNIT_SPELLCAST_FAILED unit=player target=nil spellID=34026 castGUID=Cast-2-0-0-0-34026-000000068D
+[01:26:51] EVENT -> UNIT_SPELLCAST_FAILED unit=player target=nil spellID=34026 castGUID=Cast-2-0-0-0-34026-000000068E
+[01:26:51] EVENT -> UNIT_SPELLCAST_FAILED unit=player target=nil spellID=34026 castGUID=Cast-2-0-0-0-34026-000000068F
+[01:26:51] EVENT -> UNIT_SPELLCAST_FAILED unit=player target=nil spellID=34026 castGUID=Cast-2-0-0-0-34026-0000000690
+[01:26:52] EVENT -> UNIT_SPELLCAST_FAILED unit=player target=nil spellID=34026 castGUID=Cast-2-0-0-0-34026-0000000691
+[01:26:52] EVENT -> UNIT_SPELLCAST_FAILED unit=player target=nil spellID=34026 castGUID=Cast-2-0-0-0-34026-0000000692
+[01:26:52] EVENT -> UNIT_SPELLCAST_FAILED unit=player target=nil spellID=34026 castGUID=Cast-2-0-0-0-34026-0000000693
+[01:26:52] EVENT -> UNIT_SPELLCAST_FAILED unit=player target=nil spellID=34026 castGUID=Cast-2-0-0-0-34026-0000000694
+[01:26:52] EVENT -> UNIT_SPELLCAST_FAILED unit=player target=nil spellID=34026 castGUID=Cast-2-0-0-0-34026-0000000695
+[01:26:52] EVENT -> UNIT_SPELLCAST_SUCCEEDED unit=player target=nil spellID=75 castGUID=Cast-3-4210-0-24377-75-004EC0CF1B
+[01:26:53] EVENT -> UNIT_SPELLCAST_SENT unit=player target=PvP Training Dummy spellID=34026 castGUID=Cast-3-4210-0-24377-34026-0016C0CF1C
+[01:26:53] EVENT -> UNIT_SPELLCAST_SUCCEEDED unit=player target=nil spellID=34026 castGUID=Cast-3-4210-0-24377-34026-0016C0CF1C
+[01:26:54] EVENT -> UNIT_SPELLCAST_FAILED unit=player target=nil spellID=34026 castGUID=Cast-2-0-0-0-34026-0000000697
+[01:26:54] EVENT -> UNIT_SPELLCAST_FAILED unit=player target=nil spellID=34026 castGUID=Cast-2-0-0-0-34026-0000000698
+[01:26:54] EVENT -> UNIT_SPELLCAST_FAILED unit=player target=nil spellID=34026 castGUID=Cast-2-0-0-0-34026-0000000699
+[01:26:55] EVENT -> UNIT_SPELLCAST_FAILED unit=player target=nil spellID=34026 castGUID=Cast-2-0-0-0-34026-000000069A
+[01:26:55] EVENT -> UNIT_SPELLCAST_FAILED unit=player target=nil spellID=34026 castGUID=Cast-2-0-0-0-34026-000000069B
+[01:26:55] EVENT -> UNIT_SPELLCAST_SUCCEEDED unit=player target=nil spellID=75 castGUID=Cast-3-4210-0-24377-75-0007C0CF1E
+[01:26:55] EVENT -> UNIT_SPELLCAST_FAILED unit=player target=nil spellID=34026 castGUID=Cast-2-0-0-0-34026-000000069C
+[01:26:55] EVENT -> UNIT_SPELLCAST_FAILED unit=player target=nil spellID=34026 castGUID=Cast-2-0-0-0-34026-000000069D
+[01:26:56] EVENT -> UNIT_SPELLCAST_SENT unit=player target=nil spellID=19574 castGUID=Cast-3-4210-0-24377-19574-003FC0CF1E
+[01:26:56] EVENT -> UNIT_SPELLCAST_SUCCEEDED unit=player target=nil spellID=19574 castGUID=Cast-3-4210-0-24377-19574-003FC0CF1E
+[01:26:56] EVENT -> UNIT_SPELLCAST_FAILED unit=player target=nil spellID=1264359 castGUID=Cast-2-0-0-0-1264359-000000069F
+[01:26:56] EVENT -> UNIT_SPELLCAST_FAILED unit=player target=nil spellID=1264359 castGUID=Cast-2-0-0-0-1264359-00000006A0
+[01:26:57] EVENT -> UNIT_SPELLCAST_SENT unit=player target=PvP Training Dummy spellID=1264359 castGUID=Cast-3-4210-0-24377-1264359-000540CF20
+[01:26:57] EVENT -> UNIT_SPELLCAST_SUCCEEDED unit=player target=nil spellID=1264359 castGUID=Cast-3-4210-0-24377-1264359-000540CF20
+[01:26:57] EVENT -> UNIT_SPELLCAST_SUCCEEDED unit=player target=nil spellID=75 castGUID=Cast-3-4210-0-24377-75-0042C0CF20
+[01:26:58] EVENT -> UNIT_SPELLCAST_SENT unit=player target=PvP Training Dummy spellID=217200 castGUID=Cast-3-4210-0-24377-56641-001C40CF21
+[01:26:58] EVENT -> UNIT_SPELLCAST_SUCCEEDED unit=player target=nil spellID=217200 castGUID=Cast-3-4210-0-24377-56641-001C40CF21
+[01:26:58] EVENT -> TARGET CHANGED
+[01:26:58] EVENT -> TARGET CHANGED
+[01:27:04] EVENT -> LEAVE COMBAT
+[01:27:34] EVENT -> TARGET CHANGED
+[01:27:34] === UNIT(LITE) target ===
+[01:27:34] target:UnitExists -> OK :: true
+[01:27:34] target:UnitGUID -> OK :: "Creature-0-4210-0-24377-243211-00003ED2D2"
+[01:27:34] target:UnitName -> OK :: "PvP Training Dummy" | nil
+[01:27:34] target:UnitCanAttack -> OK :: true
+[01:27:34] target:UnitHealth -> SECRET :: <secret>
+[01:27:34] target:UnitHealthMax -> SECRET :: <secret>
+[01:27:34] target:UnitPower -> SECRET :: <secret>
+[01:27:34] target:UnitPowerMax -> SECRET :: <secret>
+[01:27:34] target:UnitCastingInfo -> NIL :: <no values>
+[01:27:34] target:UnitChannelInfo -> NIL :: <no values>
+[01:27:34] === AURAS unit=target filter=HARMFUL limit=3 ===
+[01:27:34] HARMFUL aura list empty or inaccessible.
+[01:27:34] No HARMFUL auras detected in first 3 slots.
+[01:27:35] EVENT -> UNIT_SPELLCAST_SENT unit=player target=PvP Training Dummy spellID=257284 castGUID=Cast-3-4210-0-24377-257284-000340CF46
+[01:27:35] EVENT -> UNIT_SPELLCAST_SUCCEEDED unit=player target=nil spellID=257284 castGUID=Cast-3-4210-0-24377-257284-000340CF46
+[01:27:36] EVENT -> UNIT_SPELLCAST_SENT unit=player target=PvP Training Dummy spellID=75 castGUID=Cast-3-4210-0-24377-75-000CC0CF47
+[01:27:36] EVENT -> UNIT_SPELLCAST_SENT unit=player target=PvP Training Dummy spellID=217200 castGUID=Cast-3-4210-0-24377-56641-002140CF47
+[01:27:36] EVENT -> UNIT_SPELLCAST_SUCCEEDED unit=player target=nil spellID=217200 castGUID=Cast-3-4210-0-24377-56641-002140CF47
+[01:27:36] EVENT -> ENTER COMBAT
+[01:27:37] EVENT -> UNIT_SPELLCAST_SENT unit=player target=PvP Training Dummy spellID=1264359 castGUID=Cast-3-4210-0-24377-1264359-004940CF48
+[01:27:37] EVENT -> UNIT_SPELLCAST_SUCCEEDED unit=player target=nil spellID=1264359 castGUID=Cast-3-4210-0-24377-1264359-004940CF48
+[01:27:42] EVENT -> TARGET CHANGED
+[01:27:51] EVENT -> LEAVE COMBAT
+[01:27:51] EVENT -> UNIT_SPELLCAST_SENT unit=player target=nil spellID=209997 castGUID=Cast-3-4210-0-24377-209997-001EC0CF56
+[01:27:51] EVENT -> UNIT_SPELLCAST_SUCCEEDED unit=player target=nil spellID=209997 castGUID=Cast-3-4210-0-24377-209997-001EC0CF56
+[01:27:51] EVENT -> UNIT_SPELLCAST_SENT unit=player target=nil spellID=5384 castGUID=Cast-3-4210-0-24377-5384-001FC0CF56
+[01:27:51] EVENT -> UNIT_SPELLCAST_SUCCEEDED unit=player target=nil spellID=5384 castGUID=Cast-3-4210-0-24377-5384-001FC0CF56
+[01:27:51] EVENT -> UNIT_SPELLCAST_SENT unit=player target=nil spellID=210000 castGUID=Cast-3-4210-0-24377-209997-002240CF56
+[01:27:51] EVENT -> UNIT_SPELLCAST_SUCCEEDED unit=player target=nil spellID=210000 castGUID=Cast-3-4210-0-24377-209997-002240CF56
+[01:27:51] EVENT -> UNIT_SPELLCAST_SENT unit=player target=nil spellID=5384 castGUID=Cast-3-4210-0-24377-5384-0022C0CF56
+[01:27:51] EVENT -> UNIT_SPELLCAST_FAILED unit=player target=nil spellID=5384 castGUID=Cast-3-4210-0-24377-5384-0022C0CF56
+[01:27:51] EVENT -> UNIT_SPELLCAST_FAILED unit=player target=nil spellID=209997 castGUID=Cast-3-4210-0-24377-209997-003740CF56
+[01:27:51] EVENT -> UNIT_SPELLCAST_SENT unit=player target=nil spellID=5384 castGUID=Cast-3-4210-0-24377-5384-0037C0CF56
+[01:27:51] EVENT -> UNIT_SPELLCAST_FAILED unit=player target=nil spellID=5384 castGUID=Cast-3-4210-0-24377-5384-0037C0CF56
+[01:27:59] EVENT -> UNIT_SPELLCAST_SENT unit=player target=nil spellID=2641 castGUID=Cast-3-4210-0-24377-2641-002040CF5E
+[01:27:59] EVENT -> UNIT_SPELLCAST_START unit=player target=nil spellID=2641 castGUID=Cast-3-4210-0-24377-2641-002040CF5E
+[01:28:02] EVENT -> UNIT_SPELLCAST_SUCCEEDED unit=player target=nil spellID=2641 castGUID=Cast-3-4210-0-24377-2641-002040CF5E
+[01:28:02] EVENT -> UNIT_SPELLCAST_STOP unit=player target=nil spellID=2641 castGUID=Cast-3-4210-0-24377-2641-002040CF5E
