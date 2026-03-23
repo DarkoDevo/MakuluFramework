@@ -65,7 +65,7 @@ local syntheticCooldownOverrides = {
 
 local syntheticChargeDurationOverrides = {
     [217200] = 12, -- Barbed Shot
-    [34026] = 5, -- Kill Command
+    [34026] = 7, -- Kill Command recharge is longer than the live secret-tainted API is exposing here
 }
 
 local syntheticChargeMaxOverrides = {
